@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cwexmvg7gjetr"]
 
-[ext_resource type="Script" path="res://scenes/levels.gd" id="1_j7wcv"]
+[ext_resource type="Script" path="res://scripts/levels.gd" id="1_j7wcv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m4xwx"]
 bg_color = Color(0, 0, 0, 0.862745)
@@ -77,3 +77,11 @@ layout_mode = 2
 text = "Level 9"
 
 [connection signal="pressed" from="HFlowContainer/MarginContainer/VBoxContainer/GridContainer/Level_1Button" to="." method="_on_level_1_button_pressed"]
+[connection signal="pressed" from="HFlowContainer/MarginContainer/VBoxContainer/GridContainer/Level_2Button" to="." method="_on_level_2_button_pressed"]
+[connection signal="pressed" from="HFlowContainer/MarginContainer/VBoxContainer/GridContainer/Level_3Button" to="." method="_on_level_3_button_pressed"]
+[connection signal="pressed" from="HFlowContainer/MarginContainer/VBoxContainer/GridContainer/Level_4Button" to="." method="_on_level_4_button_pressed"]
+[connection signal="pressed" from="HFlowContainer/MarginContainer/VBoxContainer/GridContainer/Level_5Button" to="." method="_on_level_5_button_pressed"]
+[connection signal="pressed" from="HFlowContainer/MarginContainer/VBoxContainer/GridContainer/Level_6Button" to="." method="_on_level_6_button_pressed"]
+[connection signal="pressed" from="HFlowContainer/MarginContainer/VBoxContainer/GridContainer/Level_7Button" to="." method="_on_level_7_button_pressed"]
+[connection signal="pressed" from="HFlowContainer/MarginContainer/VBoxContainer/GridContainer/Level_8Button" to="." method="_on_level_8_button_pressed"]
+[connection signal="pressed" from="HFlowContainer/MarginContainer/VBoxContainer/GridContainer/Level_9Button" to="." method="_on_level_9_button_pressed"]
