@@ -15,9 +15,9 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	# Quit.
+	# Quit level.
 	if Input.is_key_pressed(KEY_ESCAPE):
-		get_tree().quit()
+		get_tree().change_scene_to_file("res://scenes/menu.tscn")
 
 	# Switch between bubbles.
 	if Input.is_key_pressed(KEY_1):

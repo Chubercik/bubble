@@ -1,22 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://col7xcmb60dgc"]
+[gd_scene load_steps=4 format=3 uid="uid://col7xcmb60dgc"]
 
 [ext_resource type="Script" path="res://scenes/bubble_1.gd" id="1_voxog"]
+[ext_resource type="Texture2D" uid="uid://dnup1hb7845w8" path="res://sprites/bubble_1.png" id="2_v7nl6"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wks3g"]
-
-[sub_resource type="Gradient" id="Gradient_g5gvd"]
-colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_de4sd"]
-gradient = SubResource("Gradient_g5gvd")
-width = 20
-height = 20
+[sub_resource type="CircleShape2D" id="CircleShape2D_ws4pq"]
+radius = 16.0
 
 [node name="Bubble_1" type="CharacterBody2D"]
 script = ExtResource("1_voxog")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_wks3g")
+shape = SubResource("CircleShape2D_ws4pq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("GradientTexture2D_de4sd")
+texture_filter = 1
+texture = ExtResource("2_v7nl6")

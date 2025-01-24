@@ -21,6 +21,7 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction and active:
 		velocity.x = direction * SPEED
+		rotation += direction / 5
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
