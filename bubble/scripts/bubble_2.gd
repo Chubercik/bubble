@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 200.0
+const SPEED = 150.0
 const JUMP_VELOCITY = -350.0
 const IDLE_TIMER = 2.0
 const SCALE = Vector2(0.9375, 0.9375)
