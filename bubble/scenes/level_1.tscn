@@ -1,59 +1,20 @@
-[gd_scene load_steps=12 format=3 uid="uid://bckjkd1qjgdt8"]
+[gd_scene load_steps=5 format=3 uid="uid://bckjkd1qjgdt8"]
 
 [ext_resource type="PackedScene" uid="uid://col7xcmb60dgc" path="res://scenes/bubble_1.tscn" id="1_h70jp"]
 [ext_resource type="Script" path="res://scripts/level_1.gd" id="1_xjiwk"]
 [ext_resource type="PackedScene" uid="uid://c6idgpst3jfl6" path="res://scenes/bubble_2.tscn" id="2_ps5uo"]
-[ext_resource type="PackedScene" uid="uid://hb3wb4wj08u6" path="res://scenes/bubble_3.tscn" id="4_2g8py"]
-[ext_resource type="PackedScene" uid="uid://vgtqw1p52p7w" path="res://scenes/bubble_4.tscn" id="5_gu28f"]
-[ext_resource type="PackedScene" uid="uid://csebx7a76n6ep" path="res://scenes/bubble_5.tscn" id="6_psjpr"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ulmqq"]
-size = Vector2(512, 16)
-
-[sub_resource type="Curve" id="Curve_5x5cu"]
-_data = [Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 1
-
-[sub_resource type="Curve" id="Curve_jcktp"]
-_data = [Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 1
-
-[sub_resource type="Curve" id="Curve_jftdw"]
-_data = [Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 1
-
-[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_qy662"]
-width = 512
-curve_x = SubResource("Curve_5x5cu")
-curve_y = SubResource("Curve_jcktp")
-curve_z = SubResource("Curve_jftdw")
+[ext_resource type="PackedScene" uid="uid://dafrb1hn4xafq" path="res://scenes/level_1_tiled.tscn" id="2_ui17l"]
 
 [node name="Level_1" type="Node2D"]
 script = ExtResource("1_xjiwk")
 
+[node name="Level_1_tiled" parent="." instance=ExtResource("2_ui17l")]
+position = Vector2(-224, -112)
+
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(1.2, 1.2)
 
 [node name="Bubble_1" parent="." instance=ExtResource("1_h70jp")]
-position = Vector2(-200, 0)
+position = Vector2(-336, 160)
 
 [node name="Bubble_2" parent="." instance=ExtResource("2_ps5uo")]
-position = Vector2(-100, 0)
-
-[node name="Bubble_3" parent="." instance=ExtResource("4_2g8py")]
-
-[node name="Bubble_4" parent="." instance=ExtResource("5_gu28f")]
-position = Vector2(100, 0)
-
-[node name="Bubble_5" parent="." instance=ExtResource("6_psjpr")]
-position = Vector2(200, 0)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(0, 30)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource("RectangleShape2D_ulmqq")
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-scale = Vector2(1, 16)
-texture = SubResource("CurveXYZTexture_qy662")
+position = Vector2(336, 191)

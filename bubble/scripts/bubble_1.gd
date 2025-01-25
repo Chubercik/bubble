@@ -1,13 +1,18 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const SPEED = 100.0
+const JUMP_VELOCITY = -250.0
 const IDLE_TIMER = 2.0
+const SCALE = Vector2(0.9375, 0.9375)
 
 var active = false
 var inactive_for = 0.0
 var just_landed = 0.0
+
+
+func _ready() -> void:
+	scale = SCALE
 
 
 func _physics_process(delta: float) -> void:
@@ -16,21 +21,21 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 		inactive_for = 0.0
 		rotation_degrees = Input.get_axis("ui_left", "ui_right") * 45
-		scale.y = move_toward(scale.y, 1.2, delta)
+		scale.y = move_toward(scale.y, 1.2 * SCALE.y, delta)
 		$AnimatedSprite2D.play("default")
 		just_landed = 1.0
 	elif inactive_for <= IDLE_TIMER:
 		if just_landed > 0.0:
-			scale.y = move_toward(scale.y, 1.0, delta)
+			scale.y = move_toward(scale.y, SCALE.y, delta)
 			$AnimatedSprite2D.play("jump")
 			just_landed -= delta
 			if rotation != 0:
 				just_landed = 0.0
 		else:
-			scale.y = move_toward(scale.y, 1.0, delta)
+			scale.y = move_toward(scale.y, SCALE.y, delta)
 			$AnimatedSprite2D.play("default")
 	else:
-		scale.y = move_toward(scale.y, 1.0, delta)
+		scale.y = move_toward(scale.y, SCALE.y, delta)
 		$AnimatedSprite2D.play("idle")
 
 	# Handle jump.
