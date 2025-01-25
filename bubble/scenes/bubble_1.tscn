@@ -87,7 +87,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"default",
-"speed": 5.0
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -116,7 +116,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"idle",
-"speed": 5.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -146,9 +146,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jw8am")
 }],
-"loop": true,
+"loop": false,
 "name": &"jump",
-"speed": 15.0
+"speed": 9.0
 }]
 
 [node name="Bubble_1" type="CharacterBody2D"]

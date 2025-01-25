@@ -7,6 +7,7 @@ const IDLE_TIMER = 2.0
 
 var active = false
 var inactive_for = 0.0
+var just_landed = 0.0
 
 
 func _physics_process(delta: float) -> void:
@@ -14,12 +15,20 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 		inactive_for = 0.0
-		rotation = 0
+		rotation_degrees = Input.get_axis("ui_left", "ui_right") * 45
 		scale.y = move_toward(scale.y, 1.2, delta)
 		$AnimatedSprite2D.play("default")
+		just_landed = 1.0
 	elif inactive_for <= IDLE_TIMER:
-		scale.y = move_toward(scale.y, 1.0, delta)
-		$AnimatedSprite2D.play("default")
+		if just_landed > 0.0:
+			scale.y = move_toward(scale.y, 1.0, delta)
+			$AnimatedSprite2D.play("jump")
+			just_landed -= delta
+			if rotation != 0:
+				just_landed = 0.0
+		else:
+			scale.y = move_toward(scale.y, 1.0, delta)
+			$AnimatedSprite2D.play("default")
 	else:
 		scale.y = move_toward(scale.y, 1.0, delta)
 		$AnimatedSprite2D.play("idle")
