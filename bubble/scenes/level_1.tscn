@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://bckjkd1qjgdt8"]
+[gd_scene load_steps=73 format=3 uid="uid://bckjkd1qjgdt8"]
 
 [ext_resource type="PackedScene" uid="uid://col7xcmb60dgc" path="res://scenes/bubble_1.tscn" id="1_h70jp"]
 [ext_resource type="Script" path="res://scripts/level_1.gd" id="1_xjiwk"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://cygpbuuyvm682" path="res://sprites/controls_4.png" id="9_11qug"]
 [ext_resource type="Texture2D" uid="uid://dh3g1kkusmfsc" path="res://sprites/goal.png" id="10_5sok3"]
 [ext_resource type="PackedScene" uid="uid://cq10kbelw2ica" path="res://scenes/cup_front.tscn" id="15_tytb3"]
+[ext_resource type="PackedScene" uid="uid://bi4vcqirg0jlu" path="res://scenes/cursor_handler.tscn" id="16_g4bss"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p74eb"]
 atlas = ExtResource("5_efsv3")
@@ -505,6 +506,8 @@ flat = true
 
 [node name="CupFront" parent="." instance=ExtResource("15_tytb3")]
 position = Vector2(-16, 48)
+
+[node name="CursorHandler" parent="." instance=ExtResource("16_g4bss")]
 
 [connection signal="pressed" from="Pop-ups/Tip_1/Tip_1_Close" to="." method="_on_tip_1_close_pressed"]
 [connection signal="pressed" from="Pop-ups/Tip_2/Tip_2_Close" to="." method="_on_tip_2_close_pressed"]

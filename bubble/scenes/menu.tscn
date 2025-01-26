@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://kq2273ocin4l"]
+[gd_scene load_steps=5 format=3 uid="uid://kq2273ocin4l"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_nnfcs"]
 [ext_resource type="PackedScene" uid="uid://cwexmvg7gjetr" path="res://scenes/levels.tscn" id="1_rpiko"]
+[ext_resource type="PackedScene" uid="uid://bi4vcqirg0jlu" path="res://scenes/cursor_handler.tscn" id="3_8s28k"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w8um2"]
 bg_color = Color(0.745098, 0.376471, 0.376471, 1)
@@ -60,6 +61,8 @@ vertical_alignment = 1
 [node name="Levels" parent="." instance=ExtResource("1_rpiko")]
 visible = false
 layout_mode = 1
+
+[node name="CursorHandler" parent="." instance=ExtResource("3_8s28k")]
 
 [connection signal="pressed" from="HFlowContainer/MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="HFlowContainer/MarginContainer/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]

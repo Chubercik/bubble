@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cwexmvg7gjetr"]
+[gd_scene load_steps=4 format=3 uid="uid://cwexmvg7gjetr"]
 
 [ext_resource type="Script" path="res://scripts/levels.gd" id="1_j7wcv"]
+[ext_resource type="PackedScene" uid="uid://bi4vcqirg0jlu" path="res://scenes/cursor_handler.tscn" id="2_1kcmv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m4xwx"]
 bg_color = Color(0, 0, 0, 0.862745)
@@ -75,6 +76,8 @@ text = "Level 8"
 [node name="Level_9Button" type="Button" parent="HFlowContainer/MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
 text = "Level 9"
+
+[node name="CursorHandler" parent="." instance=ExtResource("2_1kcmv")]
 
 [connection signal="pressed" from="HFlowContainer/MarginContainer/VBoxContainer/GridContainer/Level_1Button" to="." method="_on_level_1_button_pressed"]
 [connection signal="pressed" from="HFlowContainer/MarginContainer/VBoxContainer/GridContainer/Level_2Button" to="." method="_on_level_2_button_pressed"]

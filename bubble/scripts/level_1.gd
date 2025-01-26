@@ -1,5 +1,6 @@
 extends Node2D
 
+var cup: StaticBody2D
 var bubble_1: CharacterBody2D
 var bubble_2: CharacterBody2D
 var ice_cube: Area2D
@@ -12,6 +13,7 @@ var bubble_indicator: Sprite2D
 
 
 func _ready() -> void:
+	cup = $Cup
 	bubble_1 = $Bubble_1
 	bubble_2 = $Bubble_2
 	ice_cube = $IceCube
@@ -49,6 +51,9 @@ func _process(delta: float) -> void:
 		bubble_1.active = false
 		bubble_2.active = true
 		bubble_indicator.modulate = Color.html("#00cdc3")
+
+	if cup.level_finished:
+		print("Hurra!")
 
 
 func _on_tip_1_close_pressed() -> void:
