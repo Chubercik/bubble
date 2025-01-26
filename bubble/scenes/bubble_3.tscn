@@ -1,8 +1,9 @@
-[gd_scene load_steps=24 format=3 uid="uid://hb3wb4wj08u6"]
+[gd_scene load_steps=25 format=3 uid="uid://hb3wb4wj08u6"]
 
 [ext_resource type="Texture2D" uid="uid://dwuu7cqsnnycx" path="res://sprites/bubble_3_idle.png" id="1_ahlap"]
 [ext_resource type="Script" path="res://scripts/bubble_3.gd" id="1_axwv4"]
 [ext_resource type="Texture2D" uid="uid://clxgvxxyfvjll" path="res://sprites/bubble_3_jump.png" id="2_2evox"]
+[ext_resource type="AudioStream" uid="uid://bng33wwnnnhj" path="res://sounds/jump_sound.wav" id="4_ps0ig"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tnemu"]
 radius = 16.0
@@ -160,3 +161,7 @@ shape = SubResource("CircleShape2D_tnemu")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_y7iin")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ps0ig")
+volume_db = 20.0

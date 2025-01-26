@@ -6,6 +6,8 @@ const JUMP_VELOCITY = -350.0
 const IDLE_TIMER = 2.0
 const SCALE = Vector2(0.9375, 0.9375)
 
+var audio: AudioStreamPlayer2D
+
 var active = false
 var inactive_for = 0.0
 var just_landed = 0.0
@@ -13,6 +15,7 @@ var just_landed = 0.0
 
 func _ready() -> void:
 	scale = SCALE
+	audio = $AudioStreamPlayer2D
 
 
 func _physics_process(delta: float) -> void:
@@ -41,6 +44,7 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor() and active:
 		velocity.y = JUMP_VELOCITY
+		audio.play()
 		inactive_for = 0.0
 
 	# Get the input direction and handle the movement/deceleration.

@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://bckjkd1qjgdt8"]
+[gd_scene load_steps=75 format=3 uid="uid://bckjkd1qjgdt8"]
 
 [ext_resource type="PackedScene" uid="uid://col7xcmb60dgc" path="res://scenes/bubble_1.tscn" id="1_h70jp"]
 [ext_resource type="Script" path="res://scripts/level_1.gd" id="1_xjiwk"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://cq10kbelw2ica" path="res://scenes/cup_front.tscn" id="15_tytb3"]
 [ext_resource type="PackedScene" uid="uid://bi4vcqirg0jlu" path="res://scenes/cursor_handler.tscn" id="16_g4bss"]
 [ext_resource type="PackedScene" uid="uid://cxrhwi8xi0wal" path="res://scenes/level_complete/lvl_complete_screen.tscn" id="17_lgtri"]
+[ext_resource type="AudioStream" uid="uid://bkukmgmmype0k" path="res://sounds/level_music.wav" id="18_4s0x3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p74eb"]
 atlas = ExtResource("5_efsv3")
@@ -516,6 +517,10 @@ offset_left = -576.0
 offset_top = -324.0
 offset_right = -576.0
 offset_bottom = -324.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_4s0x3")
+autoplay = true
 
 [connection signal="pressed" from="Pop-ups/Tip_1/Tip_1_Close" to="." method="_on_tip_1_close_pressed"]
 [connection signal="pressed" from="Pop-ups/Tip_2/Tip_2_Close" to="." method="_on_tip_2_close_pressed"]

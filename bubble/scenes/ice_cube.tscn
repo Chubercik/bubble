@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://ur7ldbmlie16"]
+[gd_scene load_steps=17 format=3 uid="uid://ur7ldbmlie16"]
 
 [ext_resource type="Script" path="res://scripts/ice_cube.gd" id="1_1vohj"]
 [ext_resource type="Texture2D" uid="uid://df0ppw746mjrx" path="res://sprites/ice_cube.png" id="1_g85ga"]
+[ext_resource type="AudioStream" uid="uid://daq3tdos4fabv" path="res://sounds/collect_sound.wav" id="3_3aohq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_60yyj"]
 size = Vector2(17, 17)
@@ -101,5 +102,8 @@ shape = SubResource("RectangleShape2D_60yyj")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_v7hp6")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_3aohq")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
