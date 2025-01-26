@@ -7,10 +7,10 @@
 
 [node name="Level_2" type="Node2D"]
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
 [node name="Level_2_tiled" parent="." instance=ExtResource("1_ekffh")]
 position = Vector2(-32, -256)
+
+[node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Cup" parent="." instance=ExtResource("2_x7am7")]
 position = Vector2(433, 128)

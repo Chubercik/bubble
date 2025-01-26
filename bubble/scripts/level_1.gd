@@ -4,6 +4,7 @@ var cup: StaticBody2D
 var bubble_1: CharacterBody2D
 var bubble_2: CharacterBody2D
 var ice_cube: Area2D
+var syrup: Area2D
 var tip_1: AnimatedSprite2D
 var tip_2: AnimatedSprite2D
 var control_1_2_4: AnimatedSprite2D
@@ -17,6 +18,7 @@ func _ready() -> void:
 	bubble_1 = $Bubble_1
 	bubble_2 = $Bubble_2
 	ice_cube = $IceCube
+	syrup = $Syrup
 	tip_1 = $"Pop-ups/Tip_1"
 	tip_2 = $"Pop-ups/Tip_2"
 	control_1_2_4 = $"Pop-ups/Controls_1_2_4"

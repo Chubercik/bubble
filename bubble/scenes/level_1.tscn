@@ -417,10 +417,10 @@ animations = [{
 [node name="Level_1" type="Node2D"]
 script = ExtResource("1_xjiwk")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
 [node name="Level_1_tiled" parent="." instance=ExtResource("2_ui17l")]
 position = Vector2(-224, -112)
+
+[node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Cup" parent="." instance=ExtResource("3_n5d1b")]
 position = Vector2(-16, 48)
