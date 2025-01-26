@@ -1,0 +1,46 @@
+[gd_scene load_steps=10 format=3 uid="uid://b5al8hg7opse4"]
+
+[ext_resource type="Script" path="res://scripts/credits.gd" id="1_r84as"]
+[ext_resource type="Texture2D" uid="uid://dxrycye5pa5ct" path="res://sprites/menu/credits.png" id="2_ou1hc"]
+[ext_resource type="Texture2D" uid="uid://cfgtof1r61hrc" path="res://sprites/menu/back_button_hover.png" id="3_d358w"]
+[ext_resource type="Texture2D" uid="uid://cf31lyhc1o23u" path="res://sprites/menu/back_button_pressed.png" id="4_xdkot"]
+[ext_resource type="Texture2D" uid="uid://cxaey463nu1yg" path="res://sprites/menu/back_button.png" id="5_vot8m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_41wtj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j6su0"]
+texture = ExtResource("3_d358w")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mg74a"]
+texture = ExtResource("4_xdkot")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j862c"]
+texture = ExtResource("5_vot8m")
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r84as")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(576, 324)
+texture = ExtResource("2_ou1hc")
+
+[node name="BackButton" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 472.0
+offset_top = 500.0
+offset_right = 680.0
+offset_bottom = 596.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_41wtj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_j6su0")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_mg74a")
+theme_override_styles/normal = SubResource("StyleBoxTexture_j862c")
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

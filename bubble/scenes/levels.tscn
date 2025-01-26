@@ -1,10 +1,91 @@
-[gd_scene load_steps=4 format=3 uid="uid://cwexmvg7gjetr"]
+[gd_scene load_steps=38 format=3 uid="uid://cwexmvg7gjetr"]
 
 [ext_resource type="Script" path="res://scripts/levels.gd" id="1_j7wcv"]
-[ext_resource type="PackedScene" uid="uid://bi4vcqirg0jlu" path="res://scenes/cursor_handler.tscn" id="2_1kcmv"]
+[ext_resource type="Texture2D" uid="uid://csfdnjeige4h5" path="res://sprites/menu/select_level.png" id="2_qhwlh"]
+[ext_resource type="Texture2D" uid="uid://bva2a30ntn0bx" path="res://sprites/menu/level_button_hover.png" id="3_4a1fe"]
+[ext_resource type="FontFile" uid="uid://bruwuwreuuxht" path="res://fonts/pixeloid/PixeloidSans.ttf" id="3_xug4e"]
+[ext_resource type="Texture2D" uid="uid://b0plstxfylkrc" path="res://sprites/menu/level_button_pressed.png" id="4_ffstg"]
+[ext_resource type="Texture2D" uid="uid://s0tyx7d5y6bw" path="res://sprites/menu/level_button.png" id="5_bgu1a"]
+[ext_resource type="Texture2D" uid="uid://cfgtof1r61hrc" path="res://sprites/menu/back_button_hover.png" id="6_5bj25"]
+[ext_resource type="Texture2D" uid="uid://cf31lyhc1o23u" path="res://sprites/menu/back_button_pressed.png" id="7_jmjlw"]
+[ext_resource type="Texture2D" uid="uid://cxaey463nu1yg" path="res://sprites/menu/back_button.png" id="8_rtpqk"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m4xwx"]
-bg_color = Color(0, 0, 0, 0.862745)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_32v4h"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v2pee"]
+texture = ExtResource("3_4a1fe")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k283p"]
+texture = ExtResource("4_ffstg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2ldig"]
+texture = ExtResource("5_bgu1a")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jpabw"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iskeo"]
+texture = ExtResource("3_4a1fe")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uqhat"]
+texture = ExtResource("4_ffstg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_52nnl"]
+texture = ExtResource("5_bgu1a")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eiojj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_crg0u"]
+texture = ExtResource("3_4a1fe")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xnsxi"]
+texture = ExtResource("4_ffstg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_frl6j"]
+texture = ExtResource("5_bgu1a")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u8vub"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rriy3"]
+texture = ExtResource("3_4a1fe")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_74h0x"]
+texture = ExtResource("4_ffstg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_awsrp"]
+texture = ExtResource("5_bgu1a")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e3na8"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wnyt4"]
+texture = ExtResource("3_4a1fe")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l8p0t"]
+texture = ExtResource("4_ffstg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ynmuj"]
+texture = ExtResource("5_bgu1a")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tml0g"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ohv2k"]
+texture = ExtResource("3_4a1fe")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lvtgh"]
+texture = ExtResource("4_ffstg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hkil4"]
+texture = ExtResource("5_bgu1a")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p5cts"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qglsh"]
+texture = ExtResource("6_5bj25")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dajoh"]
+texture = ExtResource("7_jmjlw")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sa683"]
+texture = ExtResource("8_rtpqk")
 
 [node name="Levels" type="Control"]
 layout_mode = 3
@@ -15,76 +96,117 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_j7wcv")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="SelectLevels" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(576, 324)
+texture = ExtResource("2_qhwlh")
+
+[node name="Level_1Button" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 2
+offset_left = 400.0
+offset_top = 277.0
+offset_right = 496.0
+offset_bottom = 373.0
+theme_override_fonts/font = ExtResource("3_xug4e")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/focus = SubResource("StyleBoxEmpty_32v4h")
+theme_override_styles/hover = SubResource("StyleBoxTexture_v2pee")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_k283p")
+theme_override_styles/normal = SubResource("StyleBoxTexture_2ldig")
+text = "1"
+
+[node name="Level_2Button" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 2
+offset_left = 528.0
+offset_top = 277.0
+offset_right = 624.0
+offset_bottom = 373.0
+theme_override_fonts/font = ExtResource("3_xug4e")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jpabw")
+theme_override_styles/hover = SubResource("StyleBoxTexture_iskeo")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_uqhat")
+theme_override_styles/normal = SubResource("StyleBoxTexture_52nnl")
+text = "2"
+
+[node name="Level_3Button" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 2
+offset_left = 656.0
+offset_top = 277.0
+offset_right = 752.0
+offset_bottom = 373.0
+theme_override_fonts/font = ExtResource("3_xug4e")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/focus = SubResource("StyleBoxEmpty_eiojj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_crg0u")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_xnsxi")
+theme_override_styles/normal = SubResource("StyleBoxTexture_frl6j")
+text = "3"
+
+[node name="Level_4Button" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 2
+offset_left = 400.0
+offset_top = 388.0
+offset_right = 496.0
+offset_bottom = 484.0
+theme_override_fonts/font = ExtResource("3_xug4e")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/focus = SubResource("StyleBoxEmpty_u8vub")
+theme_override_styles/hover = SubResource("StyleBoxTexture_rriy3")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_74h0x")
+theme_override_styles/normal = SubResource("StyleBoxTexture_awsrp")
+text = "4"
+
+[node name="Level_5Button" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 2
+offset_left = 528.0
+offset_top = 389.0
+offset_right = 624.0
+offset_bottom = 485.0
+theme_override_fonts/font = ExtResource("3_xug4e")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/focus = SubResource("StyleBoxEmpty_e3na8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_wnyt4")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_l8p0t")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ynmuj")
+text = "5"
+
+[node name="Level_6Button" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 2
+offset_left = 656.0
+offset_top = 389.0
+offset_right = 752.0
+offset_bottom = 485.0
+theme_override_fonts/font = ExtResource("3_xug4e")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tml0g")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ohv2k")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_lvtgh")
+theme_override_styles/normal = SubResource("StyleBoxTexture_hkil4")
+text = "6"
+
+[node name="BackButton" type="Button" parent="."]
+texture_filter = 1
 layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 648.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_m4xwx")
+offset_left = 472.0
+offset_top = 500.0
+offset_right = 681.0
+offset_bottom = 596.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_p5cts")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qglsh")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_dajoh")
+theme_override_styles/normal = SubResource("StyleBoxTexture_sa683")
 
-[node name="HFlowContainer" type="HFlowContainer" parent="."]
-layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 648.0
-alignment = 1
-
-[node name="MarginContainer" type="MarginContainer" parent="HFlowContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 250
-theme_override_constants/margin_top = 250
-theme_override_constants/margin_right = 250
-theme_override_constants/margin_bottom = 250
-
-[node name="VBoxContainer" type="VBoxContainer" parent="HFlowContainer/MarginContainer"]
-layout_mode = 2
-
-[node name="GridContainer" type="GridContainer" parent="HFlowContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-columns = 3
-
-[node name="Level_1Button" type="Button" parent="HFlowContainer/MarginContainer/VBoxContainer/GridContainer"]
-layout_mode = 2
-text = "Level 1"
-
-[node name="Level_2Button" type="Button" parent="HFlowContainer/MarginContainer/VBoxContainer/GridContainer"]
-layout_mode = 2
-text = "Level 2"
-
-[node name="Level_3Button" type="Button" parent="HFlowContainer/MarginContainer/VBoxContainer/GridContainer"]
-layout_mode = 2
-text = "Level 3"
-
-[node name="Level_4Button" type="Button" parent="HFlowContainer/MarginContainer/VBoxContainer/GridContainer"]
-layout_mode = 2
-text = "Level 4"
-
-[node name="Level_5Button" type="Button" parent="HFlowContainer/MarginContainer/VBoxContainer/GridContainer"]
-layout_mode = 2
-text = "Level 5"
-
-[node name="Level_6Button" type="Button" parent="HFlowContainer/MarginContainer/VBoxContainer/GridContainer"]
-layout_mode = 2
-text = "Level 6"
-
-[node name="Level_7Button" type="Button" parent="HFlowContainer/MarginContainer/VBoxContainer/GridContainer"]
-layout_mode = 2
-text = "Level 7"
-
-[node name="Level_8Button" type="Button" parent="HFlowContainer/MarginContainer/VBoxContainer/GridContainer"]
-layout_mode = 2
-text = "Level 8"
-
-[node name="Level_9Button" type="Button" parent="HFlowContainer/MarginContainer/VBoxContainer/GridContainer"]
-layout_mode = 2
-text = "Level 9"
-
-[node name="CursorHandler" parent="." instance=ExtResource("2_1kcmv")]
-
-[connection signal="pressed" from="HFlowContainer/MarginContainer/VBoxContainer/GridContainer/Level_1Button" to="." method="_on_level_1_button_pressed"]
-[connection signal="pressed" from="HFlowContainer/MarginContainer/VBoxContainer/GridContainer/Level_2Button" to="." method="_on_level_2_button_pressed"]
-[connection signal="pressed" from="HFlowContainer/MarginContainer/VBoxContainer/GridContainer/Level_3Button" to="." method="_on_level_3_button_pressed"]
-[connection signal="pressed" from="HFlowContainer/MarginContainer/VBoxContainer/GridContainer/Level_4Button" to="." method="_on_level_4_button_pressed"]
-[connection signal="pressed" from="HFlowContainer/MarginContainer/VBoxContainer/GridContainer/Level_5Button" to="." method="_on_level_5_button_pressed"]
-[connection signal="pressed" from="HFlowContainer/MarginContainer/VBoxContainer/GridContainer/Level_6Button" to="." method="_on_level_6_button_pressed"]
-[connection signal="pressed" from="HFlowContainer/MarginContainer/VBoxContainer/GridContainer/Level_7Button" to="." method="_on_level_7_button_pressed"]
-[connection signal="pressed" from="HFlowContainer/MarginContainer/VBoxContainer/GridContainer/Level_8Button" to="." method="_on_level_8_button_pressed"]
-[connection signal="pressed" from="HFlowContainer/MarginContainer/VBoxContainer/GridContainer/Level_9Button" to="." method="_on_level_9_button_pressed"]
+[connection signal="pressed" from="Level_1Button" to="." method="_on_level_1_button_pressed"]
+[connection signal="pressed" from="Level_2Button" to="." method="_on_level_2_button_pressed"]
+[connection signal="pressed" from="Level_3Button" to="." method="_on_level_3_button_pressed"]
+[connection signal="pressed" from="Level_4Button" to="." method="_on_level_4_button_pressed"]
+[connection signal="pressed" from="Level_5Button" to="." method="_on_level_5_button_pressed"]
+[connection signal="pressed" from="Level_6Button" to="." method="_on_level_6_button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

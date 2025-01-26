@@ -1,69 +1,109 @@
-[gd_scene load_steps=5 format=3 uid="uid://kq2273ocin4l"]
+[gd_scene load_steps=27 format=3 uid="uid://kq2273ocin4l"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_nnfcs"]
 [ext_resource type="PackedScene" uid="uid://cwexmvg7gjetr" path="res://scenes/levels.tscn" id="1_rpiko"]
+[ext_resource type="Texture2D" uid="uid://cidmrpmvwwxa6" path="res://sprites/menu/menu.png" id="2_unwhg"]
 [ext_resource type="PackedScene" uid="uid://bi4vcqirg0jlu" path="res://scenes/cursor_handler.tscn" id="3_8s28k"]
+[ext_resource type="Texture2D" uid="uid://ckhfmnoxll648" path="res://sprites/menu/start_button_hover.png" id="3_q23j3"]
+[ext_resource type="Texture2D" uid="uid://0nwqpmabevta" path="res://sprites/menu/start_button_pressed.png" id="4_5s24c"]
+[ext_resource type="Texture2D" uid="uid://c4a8fq2yy00ke" path="res://sprites/menu/start_button.png" id="5_545dn"]
+[ext_resource type="Texture2D" uid="uid://csq2abe6guxma" path="res://sprites/menu/credits_button_hover.png" id="6_qr12y"]
+[ext_resource type="Texture2D" uid="uid://cmuxvt2cpqt2h" path="res://sprites/menu/credits_button_pressed.png" id="7_lh247"]
+[ext_resource type="Texture2D" uid="uid://0r66x45qon8m" path="res://sprites/menu/credits_button.png" id="8_bjqyh"]
+[ext_resource type="Texture2D" uid="uid://cqs0dwut5nfle" path="res://sprites/menu/exit_button_hover.png" id="9_2vodi"]
+[ext_resource type="Texture2D" uid="uid://c16uqgrxrsn2m" path="res://sprites/menu/exit_button_pressed.png" id="10_akpoq"]
+[ext_resource type="Texture2D" uid="uid://fa2csytohv3a" path="res://sprites/menu/exit_button.png" id="11_cd8h3"]
+[ext_resource type="PackedScene" uid="uid://b5al8hg7opse4" path="res://scenes/credits.tscn" id="13_c82yq"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w8um2"]
-bg_color = Color(0.745098, 0.376471, 0.376471, 1)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7dvdp"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_04kpw"]
+texture = ExtResource("3_q23j3")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fvh7c"]
+texture = ExtResource("4_5s24c")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b05dk"]
+texture = ExtResource("5_545dn")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8ojbu"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_twy1b"]
+texture = ExtResource("6_qr12y")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lk8i7"]
+texture = ExtResource("7_lh247")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_krmxe"]
+texture = ExtResource("8_bjqyh")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wtquy"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gdd03"]
+texture = ExtResource("9_2vodi")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tan73"]
+texture = ExtResource("10_akpoq")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ecgr3"]
+texture = ExtResource("11_cd8h3")
 
 [node name="Menu" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_nnfcs")
 
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 2
-offset_right = 1152.0
-offset_bottom = 648.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_w8um2")
+[node name="Menu" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(576, 324)
+texture = ExtResource("2_unwhg")
 
-[node name="HFlowContainer" type="HFlowContainer" parent="."]
-layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 648.0
-alignment = 1
-
-[node name="MarginContainer" type="MarginContainer" parent="HFlowContainer"]
+[node name="PlayButton" type="Button" parent="."]
+texture_filter = 1
 layout_mode = 2
-theme_override_constants/margin_left = 200
-theme_override_constants/margin_top = 200
-theme_override_constants/margin_right = 200
-theme_override_constants/margin_bottom = 200
+offset_left = 457.0
+offset_top = 268.0
+offset_right = 697.0
+offset_bottom = 380.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7dvdp")
+theme_override_styles/hover = SubResource("StyleBoxTexture_04kpw")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_fvh7c")
+theme_override_styles/normal = SubResource("StyleBoxTexture_b05dk")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HFlowContainer/MarginContainer"]
+[node name="CreditsButton" type="Button" parent="."]
+texture_filter = 1
 layout_mode = 2
+offset_left = 456.0
+offset_top = 376.0
+offset_right = 696.0
+offset_bottom = 488.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8ojbu")
+theme_override_styles/hover = SubResource("StyleBoxTexture_twy1b")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_lk8i7")
+theme_override_styles/normal = SubResource("StyleBoxTexture_krmxe")
 
-[node name="Title" type="Label" parent="HFlowContainer/MarginContainer/VBoxContainer"]
+[node name="QuitButton" type="Button" parent="."]
+texture_filter = 1
 layout_mode = 2
-text = "bubble game lol"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="PlayButton" type="Button" parent="HFlowContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Play"
-
-[node name="CreditsButton" type="Button" parent="HFlowContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Credits"
-
-[node name="QuitButton" type="Button" parent="HFlowContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Quit"
-
-[node name="MadeWithLove" type="Label" parent="HFlowContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Made with <3 by WeGaKu"
-horizontal_alignment = 1
-vertical_alignment = 1
+offset_left = 456.0
+offset_top = 484.0
+offset_right = 696.0
+offset_bottom = 596.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wtquy")
+theme_override_styles/hover = SubResource("StyleBoxTexture_gdd03")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_tan73")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ecgr3")
 
 [node name="Levels" parent="." instance=ExtResource("1_rpiko")]
 visible = false
 layout_mode = 1
 
+[node name="Credits" parent="." instance=ExtResource("13_c82yq")]
+visible = false
+layout_mode = 1
+
 [node name="CursorHandler" parent="." instance=ExtResource("3_8s28k")]
 
-[connection signal="pressed" from="HFlowContainer/MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="HFlowContainer/MarginContainer/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
-[connection signal="pressed" from="HFlowContainer/MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

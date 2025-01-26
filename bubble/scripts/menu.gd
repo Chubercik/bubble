@@ -1,14 +1,14 @@
 extends Control
 
 var levels: Control
+var credits: Control
 
 func _ready() -> void:
 	levels = $Levels
+	credits = $Credits
 
-
-func _process(delta: float) -> void:
-	if Input.is_key_pressed(KEY_ESCAPE):
-		levels.hide()
+	levels.hide()
+	credits.hide()
 
 
 func _on_play_button_pressed() -> void:
@@ -16,7 +16,7 @@ func _on_play_button_pressed() -> void:
 
 
 func _on_credits_button_pressed() -> void:
-	pass
+	credits.show()
 
 
 func _on_quit_button_pressed() -> void:
