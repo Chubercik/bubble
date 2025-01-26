@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://bckjkd1qjgdt8"]
+[gd_scene load_steps=72 format=3 uid="uid://bckjkd1qjgdt8"]
 
 [ext_resource type="PackedScene" uid="uid://col7xcmb60dgc" path="res://scenes/bubble_1.tscn" id="1_h70jp"]
 [ext_resource type="Script" path="res://scripts/level_1.gd" id="1_xjiwk"]
@@ -8,12 +8,13 @@
 [ext_resource type="Texture2D" uid="uid://bshbv7bahuksl" path="res://sprites/tip_1.png" id="5_efsv3"]
 [ext_resource type="PackedScene" uid="uid://ur7ldbmlie16" path="res://scenes/ice_cube.tscn" id="6_5kxiv"]
 [ext_resource type="Texture2D" uid="uid://cu88p6msxck5w" path="res://sprites/tip_2.png" id="6_esiae"]
+[ext_resource type="PackedScene" uid="uid://hmtj5iftobq3" path="res://scenes/syrup.tscn" id="7_apmev"]
 [ext_resource type="Texture2D" uid="uid://c6b1au8xl4iu3" path="res://sprites/controls_1.png" id="7_d5vwj"]
 [ext_resource type="Texture2D" uid="uid://d3hd5euqbrxur" path="res://sprites/controls_2.png" id="8_ptkkw"]
 [ext_resource type="Texture2D" uid="uid://cohhvsf3ra4w2" path="res://sprites/controls_3.png" id="9_0pscn"]
 [ext_resource type="Texture2D" uid="uid://cygpbuuyvm682" path="res://sprites/controls_4.png" id="9_11qug"]
 [ext_resource type="Texture2D" uid="uid://dh3g1kkusmfsc" path="res://sprites/goal.png" id="10_5sok3"]
-[ext_resource type="Texture2D" uid="uid://efnkcvpyraip" path="res://sprites/cup_front.png" id="13_oqi5e"]
+[ext_resource type="PackedScene" uid="uid://cq10kbelw2ica" path="res://scenes/cup_front.tscn" id="15_tytb3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p74eb"]
 atlas = ExtResource("5_efsv3")
@@ -430,39 +431,83 @@ position = Vector2(-336, 160)
 position = Vector2(336, 191)
 
 [node name="IceCube" parent="." instance=ExtResource("6_5kxiv")]
-position = Vector2(-79, -225)
+position = Vector2(-72, -232)
 
-[node name="Tip_1" type="AnimatedSprite2D" parent="."]
+[node name="Syrup" parent="." instance=ExtResource("7_apmev")]
+position = Vector2(336, -5)
+
+[node name="Pop-ups" type="Node" parent="."]
+
+[node name="Tip_1" type="AnimatedSprite2D" parent="Pop-ups"]
 texture_filter = 1
 position = Vector2(-470, -117)
 scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_cqrak")
 
-[node name="Tip_2" type="AnimatedSprite2D" parent="."]
+[node name="Tip_1_Close" type="Button" parent="Pop-ups/Tip_1"]
+offset_left = 64.0
+offset_top = -155.0
+offset_right = 88.0
+offset_bottom = -131.0
+flat = true
+
+[node name="Tip_2" type="AnimatedSprite2D" parent="Pop-ups"]
 texture_filter = 1
 position = Vector2(-470, 156)
 scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_dn770")
 
-[node name="Controls_1_2_4" type="AnimatedSprite2D" parent="."]
+[node name="Tip_2_Close" type="Button" parent="Pop-ups/Tip_2"]
+offset_left = 64.0
+offset_top = -155.0
+offset_right = 88.0
+offset_bottom = -131.0
+flat = true
+
+[node name="Controls_1_2_4" type="AnimatedSprite2D" parent="Pop-ups"]
 texture_filter = 1
 position = Vector2(1, -286)
 scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_cpqfw")
 
-[node name="Controls_3" type="AnimatedSprite2D" parent="."]
+[node name="Controls_1_2_4_Close" type="Button" parent="Pop-ups/Controls_1_2_4"]
+offset_left = 123.0
+offset_top = -27.0
+offset_right = 138.0
+offset_bottom = -12.0
+flat = true
+
+[node name="Controls_3" type="AnimatedSprite2D" parent="Pop-ups"]
 texture_filter = 1
 position = Vector2(471, 19)
 scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_7ik2q")
 
-[node name="Goal" type="AnimatedSprite2D" parent="."]
+[node name="Controls_3_Close" type="Button" parent="Pop-ups/Controls_3"]
+offset_left = 64.0
+offset_top = -155.0
+offset_right = 88.0
+offset_bottom = -131.0
+flat = true
+
+[node name="Goal" type="AnimatedSprite2D" parent="Pop-ups"]
 texture_filter = 1
 position = Vector2(42, 285)
 scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_8202p")
 
-[node name="CupFront" type="Sprite2D" parent="."]
-texture_filter = 1
+[node name="Goal_Close" type="Button" parent="Pop-ups/Goal"]
+offset_left = 13.3333
+offset_top = -26.6667
+offset_right = 29.3333
+offset_bottom = -11.6667
+flat = true
+
+[node name="CupFront" parent="." instance=ExtResource("15_tytb3")]
 position = Vector2(-16, 48)
-texture = ExtResource("13_oqi5e")
+
+[connection signal="pressed" from="Pop-ups/Tip_1/Tip_1_Close" to="." method="_on_tip_1_close_pressed"]
+[connection signal="pressed" from="Pop-ups/Tip_2/Tip_2_Close" to="." method="_on_tip_2_close_pressed"]
+[connection signal="pressed" from="Pop-ups/Controls_1_2_4/Controls_1_2_4_Close" to="." method="_on_controls_1_2_4_close_pressed"]
+[connection signal="pressed" from="Pop-ups/Controls_3/Controls_3_Close" to="." method="_on_controls_3_close_pressed"]
+[connection signal="pressed" from="Pop-ups/Goal/Goal_Close" to="." method="_on_goal_close_pressed"]

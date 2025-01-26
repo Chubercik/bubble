@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cq10kbelw2ica"]
+
+[ext_resource type="Texture2D" uid="uid://efnkcvpyraip" path="res://sprites/cup_front.png" id="1_52pvg"]
+
+[node name="CupFront" type="Sprite2D"]
+texture_filter = 1
+texture = ExtResource("1_52pvg")

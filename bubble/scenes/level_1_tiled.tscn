@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=4 uid="uid://dafrb1hn4xafq"]
 
-[ext_resource type="Texture2D" uid="uid://c0cg44ngn2c4t" path="res://levels/tileset.png" id="bubble"]
+[ext_resource type="Texture2D" uid="uid://ctp3sefiagpa0" path="res://levels/tileset.png" id="bubble"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0"]
 texture = ExtResource("bubble")

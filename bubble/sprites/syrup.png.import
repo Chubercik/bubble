@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctp3sefiagpa0"
-path="res://.godot/imported/tileset.png-e8c31d62badf8873ea1ad70282e506b2.ctex"
+uid="uid://jkoqybcln3lh"
+path="res://.godot/imported/syrup.png-5ab7049efd78aa104589b686a974f3e6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/tileset.png"
-dest_files=["res://.godot/imported/tileset.png-e8c31d62badf8873ea1ad70282e506b2.ctex"]
+source_file="res://sprites/syrup.png"
+dest_files=["res://.godot/imported/syrup.png-5ab7049efd78aa104589b686a974f3e6.ctex"]
 
 [params]
 
