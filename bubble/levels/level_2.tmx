@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.10" tiledversion="1.11.1" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="32" tileheight="32" infinite="1" nextlayerid="7" nextobjectid="1">
- <tileset firstgid="1" source="level_1.tsx"/>
+ <tileset firstgid="1" source="levels.tsx"/>
  <layer id="2" name="tlo" width="30" height="20">
   <data encoding="csv">
    <chunk x="-16" y="0" width="16" height="16">

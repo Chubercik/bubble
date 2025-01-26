@@ -1,11 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://d6jh8846y53y"]
+[gd_scene load_steps=12 format=3 uid="uid://d6jh8846y53y"]
 
+[ext_resource type="Script" path="res://scripts/level_2.gd" id="1_4100r"]
 [ext_resource type="PackedScene" uid="uid://byrujcpqlv2wm" path="res://scenes/level_2_tiled.tscn" id="1_ekffh"]
 [ext_resource type="PackedScene" uid="uid://dsep0sua6qxwv" path="res://scenes/cup.tscn" id="2_x7am7"]
 [ext_resource type="PackedScene" uid="uid://cq10kbelw2ica" path="res://scenes/cup_front.tscn" id="3_6vf8b"]
 [ext_resource type="PackedScene" uid="uid://bi4vcqirg0jlu" path="res://scenes/cursor_handler.tscn" id="4_1mwwd"]
+[ext_resource type="PackedScene" uid="uid://col7xcmb60dgc" path="res://scenes/bubble_1.tscn" id="4_jgrs8"]
+[ext_resource type="PackedScene" uid="uid://c6idgpst3jfl6" path="res://scenes/bubble_2.tscn" id="5_uka3l"]
+[ext_resource type="PackedScene" uid="uid://ur7ldbmlie16" path="res://scenes/ice_cube.tscn" id="6_kuagg"]
+[ext_resource type="PackedScene" uid="uid://cxrhwi8xi0wal" path="res://scenes/level_complete/lvl_complete_screen.tscn" id="6_sfmnp"]
+[ext_resource type="AudioStream" uid="uid://bkukmgmmype0k" path="res://sounds/level_music.wav" id="7_kg458"]
+[ext_resource type="PackedScene" uid="uid://hmtj5iftobq3" path="res://scenes/syrup.tscn" id="7_u3tfn"]
 
 [node name="Level_2" type="Node2D"]
+script = ExtResource("1_4100r")
 
 [node name="Level_2_tiled" parent="." instance=ExtResource("1_ekffh")]
 position = Vector2(-32, -256)
@@ -15,7 +23,29 @@ position = Vector2(-32, -256)
 [node name="Cup" parent="." instance=ExtResource("2_x7am7")]
 position = Vector2(433, 128)
 
+[node name="Bubble_1" parent="." instance=ExtResource("4_jgrs8")]
+position = Vector2(-464, -176)
+
+[node name="Bubble_2" parent="." instance=ExtResource("5_uka3l")]
+position = Vector2(496, -112)
+
+[node name="IceCube" parent="." instance=ExtResource("6_kuagg")]
+position = Vector2(-328, 104)
+
+[node name="Syrup" parent="." instance=ExtResource("7_u3tfn")]
+position = Vector2(48, -53)
+
 [node name="CupFront" parent="." instance=ExtResource("3_6vf8b")]
 position = Vector2(433, 128)
 
 [node name="CursorHandler" parent="." instance=ExtResource("4_1mwwd")]
+
+[node name="LvlCompleteScreen" parent="." instance=ExtResource("6_sfmnp")]
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -576.0
+offset_bottom = -324.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_kg458")
+autoplay = true

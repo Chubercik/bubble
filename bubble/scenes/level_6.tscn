@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cog36rp4tev1b"]
+[gd_scene load_steps=15 format=3 uid="uid://cog36rp4tev1b"]
 
 [ext_resource type="PackedScene" uid="uid://bssdcr0yia68j" path="res://scenes/level_6_tiled.tscn" id="1_pvor1"]
 [ext_resource type="Script" path="res://scripts/level_6.gd" id="1_qnshk"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://csebx7a76n6ep" path="res://scenes/bubble_5.tscn" id="6_sh46d"]
 [ext_resource type="PackedScene" uid="uid://ur7ldbmlie16" path="res://scenes/ice_cube.tscn" id="8_4u8q8"]
 [ext_resource type="PackedScene" uid="uid://hmtj5iftobq3" path="res://scenes/syrup.tscn" id="9_w7hhw"]
+[ext_resource type="PackedScene" uid="uid://cxrhwi8xi0wal" path="res://scenes/level_complete/lvl_complete_screen.tscn" id="13_kl6n1"]
 [ext_resource type="AudioStream" uid="uid://bkukmgmmype0k" path="res://sounds/level_music.wav" id="13_t8up7"]
 
 [node name="Level_6" type="Node2D"]
@@ -50,6 +51,12 @@ position = Vector2(-751, 43)
 position = Vector2(16, 288)
 
 [node name="CursorHandler" parent="." instance=ExtResource("4_756xp")]
+
+[node name="LvlCompleteScreen" parent="." instance=ExtResource("13_kl6n1")]
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -576.0
+offset_bottom = -324.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_t8up7")

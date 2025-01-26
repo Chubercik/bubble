@@ -1,0 +1,55 @@
+[gd_scene load_steps=13 format=3 uid="uid://cvj3sybijxigq"]
+
+[ext_resource type="PackedScene" uid="uid://d0hr366258s1u" path="res://scenes/level_5_tiled.tscn" id="1_6j2xb"]
+[ext_resource type="Script" path="res://scripts/level_5.gd" id="1_li43j"]
+[ext_resource type="PackedScene" uid="uid://bi4vcqirg0jlu" path="res://scenes/cursor_handler.tscn" id="2_4hwds"]
+[ext_resource type="PackedScene" uid="uid://cxrhwi8xi0wal" path="res://scenes/level_complete/lvl_complete_screen.tscn" id="3_1avha"]
+[ext_resource type="PackedScene" uid="uid://dsep0sua6qxwv" path="res://scenes/cup.tscn" id="3_mni20"]
+[ext_resource type="PackedScene" uid="uid://cq10kbelw2ica" path="res://scenes/cup_front.tscn" id="4_7a00k"]
+[ext_resource type="PackedScene" uid="uid://c6idgpst3jfl6" path="res://scenes/bubble_2.tscn" id="4_re8cb"]
+[ext_resource type="PackedScene" uid="uid://vgtqw1p52p7w" path="res://scenes/bubble_4.tscn" id="5_ef78g"]
+[ext_resource type="AudioStream" uid="uid://bkukmgmmype0k" path="res://sounds/level_music.wav" id="5_wumrt"]
+[ext_resource type="PackedScene" uid="uid://csebx7a76n6ep" path="res://scenes/bubble_5.tscn" id="6_x0bja"]
+[ext_resource type="PackedScene" uid="uid://ur7ldbmlie16" path="res://scenes/ice_cube.tscn" id="7_4loev"]
+[ext_resource type="PackedScene" uid="uid://hmtj5iftobq3" path="res://scenes/syrup.tscn" id="8_634p4"]
+
+[node name="Level_5" type="Node2D"]
+script = ExtResource("1_li43j")
+
+[node name="Level_5_tiled" parent="." instance=ExtResource("1_6j2xb")]
+position = Vector2(320, -96)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Cup" parent="." instance=ExtResource("3_mni20")]
+position = Vector2(44, 128)
+
+[node name="Bubble_2" parent="." instance=ExtResource("4_re8cb")]
+position = Vector2(272, 368)
+
+[node name="Bubble_4" parent="." instance=ExtResource("5_ef78g")]
+position = Vector2(-272, -272)
+
+[node name="Bubble_5" parent="." instance=ExtResource("6_x0bja")]
+position = Vector2(-112, 272)
+
+[node name="IceCube" parent="." instance=ExtResource("7_4loev")]
+position = Vector2(56, -280)
+
+[node name="Syrup" parent="." instance=ExtResource("8_634p4")]
+position = Vector2(-271, 139)
+
+[node name="CupFront" parent="." instance=ExtResource("4_7a00k")]
+position = Vector2(44, 128)
+
+[node name="CursorHandler" parent="." instance=ExtResource("2_4hwds")]
+
+[node name="LvlCompleteScreen" parent="." instance=ExtResource("3_1avha")]
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -576.0
+offset_bottom = -324.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_wumrt")
+autoplay = true

@@ -10,6 +10,8 @@ var ice_cube: Area2D
 var syrup: Area2D
 var camera: Camera2D
 
+var lvl_comp: Control
+
 var active_bubble: CharacterBody2D
 var active_pos = Vector2(0, 0)
 
@@ -24,6 +26,9 @@ func _ready() -> void:
 	ice_cube = $IceCube
 	syrup = $Syrup
 	camera = $Camera2D
+
+	lvl_comp = $LvlCompleteScreen
+	lvl_comp.curr_scene = 6
 
 	bubble_1.active = true
 	active_bubble = bubble_1
@@ -82,4 +87,4 @@ func _process(delta: float) -> void:
 	camera.position = Vector2(min(232, max(-200, active_pos.x)), min(68, max(-68, active_pos.y)))
 
 	if cup.level_finished:
-		print("Hurra!")
+		pass
