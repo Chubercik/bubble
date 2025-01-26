@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://bckjkd1qjgdt8"]
+[gd_scene load_steps=74 format=3 uid="uid://bckjkd1qjgdt8"]
 
 [ext_resource type="PackedScene" uid="uid://col7xcmb60dgc" path="res://scenes/bubble_1.tscn" id="1_h70jp"]
 [ext_resource type="Script" path="res://scripts/level_1.gd" id="1_xjiwk"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://dh3g1kkusmfsc" path="res://sprites/goal.png" id="10_5sok3"]
 [ext_resource type="PackedScene" uid="uid://cq10kbelw2ica" path="res://scenes/cup_front.tscn" id="15_tytb3"]
 [ext_resource type="PackedScene" uid="uid://bi4vcqirg0jlu" path="res://scenes/cursor_handler.tscn" id="16_g4bss"]
+[ext_resource type="PackedScene" uid="uid://cxrhwi8xi0wal" path="res://scenes/level_complete/lvl_complete_screen.tscn" id="17_lgtri"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p74eb"]
 atlas = ExtResource("5_efsv3")
@@ -508,6 +509,13 @@ flat = true
 position = Vector2(-16, 48)
 
 [node name="CursorHandler" parent="." instance=ExtResource("16_g4bss")]
+
+[node name="LvlCompleteScreen" parent="." instance=ExtResource("17_lgtri")]
+z_index = 1
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -576.0
+offset_bottom = -324.0
 
 [connection signal="pressed" from="Pop-ups/Tip_1/Tip_1_Close" to="." method="_on_tip_1_close_pressed"]
 [connection signal="pressed" from="Pop-ups/Tip_2/Tip_2_Close" to="." method="_on_tip_2_close_pressed"]

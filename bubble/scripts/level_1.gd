@@ -12,6 +12,8 @@ var control_3: AnimatedSprite2D
 var goal: AnimatedSprite2D
 var bubble_indicator: Sprite2D
 
+var lvl_comp: Control
+
 
 func _ready() -> void:
 	cup = $Cup
@@ -25,6 +27,9 @@ func _ready() -> void:
 	control_3 = $"Pop-ups/Controls_3"
 	goal = $"Pop-ups/Goal"
 	bubble_indicator = $Level_1_tiled/BubbleIndicator
+
+	lvl_comp = $LvlCompleteScreen
+	lvl_comp.curr_scene = 1
 
 	bubble_1.active = true
 	tip_1.play("default")
@@ -55,7 +60,12 @@ func _process(delta: float) -> void:
 		bubble_indicator.modulate = Color.html("#00cdc3")
 
 	if cup.level_finished:
-		print("Hurra!")
+		var score = 1
+		if ice_cube.collected:
+			score += 1
+		if syrup.collected:
+			score += 1
+		lvl_comp.score = score
 
 
 func _on_tip_1_close_pressed() -> void:

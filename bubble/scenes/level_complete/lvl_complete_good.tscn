@@ -1,0 +1,80 @@
+[gd_scene load_steps=12 format=3 uid="uid://be84lk8jnq36p"]
+
+[ext_resource type="Texture2D" uid="uid://cjy4jrvc8rd6g" path="res://sprites/level_complete/lvl_complete_good.png" id="1_th8gq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_avxih"]
+atlas = ExtResource("1_th8gq")
+region = Rect2(0, 0, 480, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o28ly"]
+atlas = ExtResource("1_th8gq")
+region = Rect2(480, 0, 480, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5i2u"]
+atlas = ExtResource("1_th8gq")
+region = Rect2(960, 0, 480, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ww4wp"]
+atlas = ExtResource("1_th8gq")
+region = Rect2(1440, 0, 480, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m7c7e"]
+atlas = ExtResource("1_th8gq")
+region = Rect2(1920, 0, 480, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2qoh1"]
+atlas = ExtResource("1_th8gq")
+region = Rect2(2400, 0, 480, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12ey1"]
+atlas = ExtResource("1_th8gq")
+region = Rect2(2880, 0, 480, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wdo6q"]
+atlas = ExtResource("1_th8gq")
+region = Rect2(3360, 0, 480, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7u7tw"]
+atlas = ExtResource("1_th8gq")
+region = Rect2(3840, 0, 480, 320)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_knv7y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_avxih")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o28ly")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p5i2u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ww4wp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m7c7e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2qoh1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_12ey1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wdo6q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7u7tw")
+}],
+"loop": false,
+"name": &"default",
+"speed": 9.0
+}]
+
+[node name="LvlCompleteGood" type="AnimatedSprite2D"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_knv7y")
+frame = 8
+frame_progress = 1.0

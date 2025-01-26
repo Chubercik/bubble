@@ -1,0 +1,114 @@
+[gd_scene load_steps=17 format=3 uid="uid://7ndafx3fiman"]
+
+[ext_resource type="Texture2D" uid="uid://bh47lafgshe6" path="res://sprites/level_complete/lvl_complete.png" id="1_wpcyk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3bbwv"]
+atlas = ExtResource("1_wpcyk")
+region = Rect2(0, 0, 480, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6hym"]
+atlas = ExtResource("1_wpcyk")
+region = Rect2(480, 0, 480, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_15251"]
+atlas = ExtResource("1_wpcyk")
+region = Rect2(960, 0, 480, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uwbdj"]
+atlas = ExtResource("1_wpcyk")
+region = Rect2(1440, 0, 480, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a4wxq"]
+atlas = ExtResource("1_wpcyk")
+region = Rect2(1920, 0, 480, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kmya"]
+atlas = ExtResource("1_wpcyk")
+region = Rect2(2400, 0, 480, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wa0ct"]
+atlas = ExtResource("1_wpcyk")
+region = Rect2(2880, 0, 480, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_edb2t"]
+atlas = ExtResource("1_wpcyk")
+region = Rect2(3360, 0, 480, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvuwq"]
+atlas = ExtResource("1_wpcyk")
+region = Rect2(3840, 0, 480, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wymc7"]
+atlas = ExtResource("1_wpcyk")
+region = Rect2(4320, 0, 480, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_djf8y"]
+atlas = ExtResource("1_wpcyk")
+region = Rect2(4800, 0, 480, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55mnm"]
+atlas = ExtResource("1_wpcyk")
+region = Rect2(5280, 0, 480, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q120q"]
+atlas = ExtResource("1_wpcyk")
+region = Rect2(5760, 0, 480, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8eubd"]
+atlas = ExtResource("1_wpcyk")
+region = Rect2(6240, 0, 480, 320)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3toam"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3bbwv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g6hym")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_15251")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uwbdj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a4wxq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1kmya")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wa0ct")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_edb2t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gvuwq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wymc7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_djf8y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55mnm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q120q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8eubd")
+}],
+"loop": false,
+"name": &"default",
+"speed": 7.0
+}]
+
+[node name="LvlComplete" type="AnimatedSprite2D"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_3toam")
+frame_progress = 0.885608

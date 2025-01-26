@@ -1,0 +1,101 @@
+[gd_scene load_steps=21 format=3 uid="uid://cxrhwi8xi0wal"]
+
+[ext_resource type="Script" path="res://scripts/level_complete/lvl_complete_screen.gd" id="1_bo4pt"]
+[ext_resource type="PackedScene" uid="uid://7ndafx3fiman" path="res://scenes/level_complete/lvl_complete.tscn" id="1_kmcoh"]
+[ext_resource type="PackedScene" uid="uid://be84lk8jnq36p" path="res://scenes/level_complete/lvl_complete_good.tscn" id="2_3tcwu"]
+[ext_resource type="PackedScene" uid="uid://dgre1wrhi0uf5" path="res://scenes/level_complete/lvl_complete_great.tscn" id="3_l8144"]
+[ext_resource type="PackedScene" uid="uid://bu1ekpnistrru" path="res://scenes/level_complete/lvl_complete_perfect.tscn" id="4_3e27u"]
+[ext_resource type="Texture2D" uid="uid://b5bjbxe5lnns4" path="res://sprites/level_complete/replay_button_hover.png" id="6_jaa4k"]
+[ext_resource type="Texture2D" uid="uid://10ggcdhllafs" path="res://sprites/level_complete/next_button_hover.png" id="6_tt8vq"]
+[ext_resource type="Texture2D" uid="uid://p2l8ukkpsvhm" path="res://sprites/level_complete/next_button_pressed.png" id="7_d0twh"]
+[ext_resource type="Texture2D" uid="uid://camlxnyovd6o3" path="res://sprites/level_complete/replay_button_pressed.png" id="7_vecx8"]
+[ext_resource type="Texture2D" uid="uid://deaxtaq0h5l0d" path="res://sprites/level_complete/next_button.png" id="8_8x4hj"]
+[ext_resource type="Texture2D" uid="uid://e6e7mrpmfk66" path="res://sprites/level_complete/replay_button.png" id="8_pyffc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s4vkx"]
+bg_color = Color(0, 0, 0, 0.752941)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qe65w"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7e5ah"]
+texture = ExtResource("6_jaa4k")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_466li"]
+texture = ExtResource("7_vecx8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pot16"]
+texture = ExtResource("8_pyffc")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hicpl"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kggcp"]
+texture = ExtResource("6_tt8vq")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mwdlo"]
+texture = ExtResource("7_d0twh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e2yww"]
+texture = ExtResource("8_8x4hj")
+
+[node name="LvlCompleteScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bo4pt")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_s4vkx")
+
+[node name="LvlComplete" parent="." instance=ExtResource("1_kmcoh")]
+position = Vector2(576, 324)
+
+[node name="LvlCompleteGood" parent="." instance=ExtResource("2_3tcwu")]
+position = Vector2(576, 324)
+
+[node name="LvlCompleteGreat" parent="." instance=ExtResource("3_l8144")]
+position = Vector2(576, 324)
+
+[node name="LvlCompletePerfect" parent="." instance=ExtResource("4_3e27u")]
+position = Vector2(576, 324)
+
+[node name="ReplayButton" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 404.0
+offset_top = 400.0
+offset_right = 524.0
+offset_bottom = 457.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qe65w")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7e5ah")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_466li")
+theme_override_styles/normal = SubResource("StyleBoxTexture_pot16")
+
+[node name="NextButton" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 628.0
+offset_top = 400.0
+offset_right = 748.0
+offset_bottom = 456.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hicpl")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kggcp")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_mwdlo")
+theme_override_styles/normal = SubResource("StyleBoxTexture_e2yww")
+
+[node name="CloseButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 772.0
+offset_top = 184.0
+offset_right = 796.0
+offset_bottom = 208.0
+flat = true
+
+[connection signal="pressed" from="ReplayButton" to="." method="_on_replay_button_pressed"]
+[connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]

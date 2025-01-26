@@ -1,0 +1,101 @@
+[gd_scene load_steps=15 format=3 uid="uid://bu1ekpnistrru"]
+
+[ext_resource type="Texture2D" uid="uid://hqa7oernmty5" path="res://sprites/level_complete/lvl_complete_perfect.png" id="1_8kkux"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2d2xx"]
+atlas = ExtResource("1_8kkux")
+region = Rect2(0, 0, 480, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ygnur"]
+atlas = ExtResource("1_8kkux")
+region = Rect2(480, 0, 480, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_noaae"]
+atlas = ExtResource("1_8kkux")
+region = Rect2(960, 0, 480, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w6jgf"]
+atlas = ExtResource("1_8kkux")
+region = Rect2(1440, 0, 480, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ylw1p"]
+atlas = ExtResource("1_8kkux")
+region = Rect2(1920, 0, 480, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kefpd"]
+atlas = ExtResource("1_8kkux")
+region = Rect2(2400, 0, 480, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p8mds"]
+atlas = ExtResource("1_8kkux")
+region = Rect2(2880, 0, 480, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x1wly"]
+atlas = ExtResource("1_8kkux")
+region = Rect2(3360, 0, 480, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cswyx"]
+atlas = ExtResource("1_8kkux")
+region = Rect2(3840, 0, 480, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fhboc"]
+atlas = ExtResource("1_8kkux")
+region = Rect2(4320, 0, 480, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eluyh"]
+atlas = ExtResource("1_8kkux")
+region = Rect2(4800, 0, 480, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86brg"]
+atlas = ExtResource("1_8kkux")
+region = Rect2(5280, 0, 480, 320)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rlyet"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2d2xx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ygnur")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_noaae")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w6jgf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ylw1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kefpd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p8mds")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x1wly")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cswyx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fhboc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eluyh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86brg")
+}],
+"loop": false,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="LvlCompletePerfect" type="AnimatedSprite2D"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_rlyet")
+frame = 11
+frame_progress = 1.0
