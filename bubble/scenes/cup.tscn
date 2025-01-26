@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsep0sua6qxwv"]
+
+[ext_resource type="Texture2D" uid="uid://dfojhqtgsyhwj" path="res://sprites/cup_base.png" id="1_3klw0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ad1nh"]
+size = Vector2(88, 119)
+
+[node name="Cup" type="StaticBody2D"]
+
+[node name="CupBase" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_3klw0")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_ad1nh")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-44, 62, -44, -57, -41, -57, -28, 57, 27, 57, 41, -57, 44, -57, 44, 62)
