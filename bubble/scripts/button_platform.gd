@@ -4,6 +4,7 @@ enum Variants {NORMAL, ALT, HEAVY}
 @export var ButtonVariant = Variants.NORMAL
 
 var bubbles: Dictionary
+var blocks: Dictionary
 
 var top_sprites: Node2D
 var top: Sprite2D
@@ -25,11 +26,12 @@ func is_active() -> bool:
 	if ButtonVariant == Variants.HEAVY:
 		return bubbles.has("Bubble_3")
 	else:
-		return len(bubbles) > 0
+		return len(bubbles) > 0 or len(blocks) > 0
 
 
 func _ready() -> void:
 	bubbles = {}
+	blocks = {}
 
 	top_sprites = $Area2D/Sprites
 	top = $Area2D/Sprites/Top
@@ -74,21 +76,27 @@ func _process(_delta: float) -> void:
 			bottom_heavy.show()
 
 	if ButtonVariant == Variants.HEAVY:
-		if bubbles.has("Bubble_3"):
+		if bubbles.has("Bubble_3") or len(blocks) > 0:
 			top_sprites.position = bot_pos
 			button_hardener.set_deferred("disabled", true)
 		else:
 			top_sprites.position = top_pos
 			button_hardener.set_deferred("disabled", false)
-	elif len(bubbles) > 0:
+	elif len(bubbles) > 0 or len(blocks) > 0:
 		top_sprites.position = bot_pos
 	else:
 		top_sprites.position = top_pos
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	bubbles[body.name] = null
+	if body is CharacterBody2D:
+		bubbles[body.name] = null
+	elif body is RigidBody2D:
+		blocks[body.name] = null
 
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
-	bubbles.erase(body.name)
+	if body is CharacterBody2D:
+		bubbles.erase(body.name)
+	elif body is RigidBody2D:
+		blocks.erase(body.name)

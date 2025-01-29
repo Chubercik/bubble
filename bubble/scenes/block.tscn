@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcplme3va721a"]
+
+[ext_resource type="Texture2D" uid="uid://ctp3sefiagpa0" path="res://levels/tileset.png" id="1_fs8d0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2xgdr"]
+size = Vector2(32, 32)
+
+[node name="Block" type="Node2D"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+lock_rotation = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("RectangleShape2D_2xgdr")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+texture_filter = 1
+texture = ExtResource("1_fs8d0")
+region_enabled = true
+region_rect = Rect2(0, 160, 32, 32)

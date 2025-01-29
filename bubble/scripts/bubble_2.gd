@@ -23,7 +23,8 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 		inactive_for = 0.0
-		rotation_degrees = Input.get_axis("ui_left", "ui_right") * 45
+		if active:
+			rotation_degrees = Input.get_axis("ui_left", "ui_right") * 45
 		scale.y = move_toward(scale.y, 1.2 * SCALE.y, delta)
 		$AnimatedSprite2D.play("default")
 		just_landed = 1.0

@@ -5,6 +5,7 @@ const SPEED = 100.0
 const JUMP_VELOCITY = -250.0
 const IDLE_TIMER = 2.0
 const SCALE = Vector2(0.9375, 0.9375)
+const PUSH_FORCE = 34.5
 
 var audio: AudioStreamPlayer2D
 
@@ -23,7 +24,8 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 		inactive_for = 0.0
-		rotation_degrees = Input.get_axis("ui_left", "ui_right") * 45
+		if active:
+			rotation_degrees = Input.get_axis("ui_left", "ui_right") * 45
 		scale.y = move_toward(scale.y, 1.2 * SCALE.y, delta)
 		$AnimatedSprite2D.play("default")
 		just_landed = 1.0
@@ -58,5 +60,10 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+	for i in get_slide_collision_count():
+		var c = get_slide_collision(i)
+		if c.get_collider() is RigidBody2D:
+			c.get_collider().apply_central_impulse(-c.get_normal() * PUSH_FORCE)
 
 	inactive_for += delta

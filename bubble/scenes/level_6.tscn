@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cog36rp4tev1b"]
+[gd_scene load_steps=17 format=3 uid="uid://cog36rp4tev1b"]
 
 [ext_resource type="PackedScene" uid="uid://bssdcr0yia68j" path="res://scenes/level_6_tiled.tscn" id="1_pvor1"]
 [ext_resource type="Script" path="res://scripts/level_6.gd" id="1_qnshk"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://csebx7a76n6ep" path="res://scenes/bubble_5.tscn" id="6_sh46d"]
 [ext_resource type="PackedScene" uid="uid://ur7ldbmlie16" path="res://scenes/ice_cube.tscn" id="8_4u8q8"]
 [ext_resource type="PackedScene" uid="uid://hmtj5iftobq3" path="res://scenes/syrup.tscn" id="9_w7hhw"]
+[ext_resource type="PackedScene" uid="uid://dcplme3va721a" path="res://scenes/block.tscn" id="12_yhptg"]
 [ext_resource type="PackedScene" uid="uid://cxrhwi8xi0wal" path="res://scenes/level_complete/lvl_complete_screen.tscn" id="13_kl6n1"]
 [ext_resource type="AudioStream" uid="uid://bkukmgmmype0k" path="res://sounds/level_music.wav" id="13_t8up7"]
 [ext_resource type="PackedScene" uid="uid://dkhpxltqr6td7" path="res://scenes/button_platform.tscn" id="15_i6mdb"]
@@ -48,6 +49,18 @@ position = Vector2(-488, -328)
 [node name="Syrup" parent="." instance=ExtResource("9_w7hhw")]
 position = Vector2(-751, 43)
 
+[node name="Buttons" type="Node2D" parent="."]
+
+[node name="Button_1" parent="Buttons" instance=ExtResource("15_i6mdb")]
+position = Vector2(400, -48)
+
+[node name="Button_2" parent="Buttons" instance=ExtResource("15_i6mdb")]
+position = Vector2(752, 112)
+ButtonVariant = 2
+
+[node name="Block" parent="." instance=ExtResource("12_yhptg")]
+position = Vector2(688, 80)
+
 [node name="CupFront" parent="." instance=ExtResource("3_hq014")]
 position = Vector2(16, 288)
 
@@ -63,14 +76,3 @@ offset_bottom = -324.0
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_t8up7")
 autoplay = true
-
-[node name="ButtonPlatformNormal" parent="." instance=ExtResource("15_i6mdb")]
-position = Vector2(496, -47)
-
-[node name="ButtonPlatformAlt" parent="." instance=ExtResource("15_i6mdb")]
-position = Vector2(528, -47)
-ButtonVariant = 1
-
-[node name="ButtonPlatformHeavy" parent="." instance=ExtResource("15_i6mdb")]
-position = Vector2(560, -47)
-ButtonVariant = 2

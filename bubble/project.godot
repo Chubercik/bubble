@@ -57,5 +57,4 @@ ui_down={
 
 [physics]
 
-2d/physics_engine="Rapier2D"
 rapier/fluid/fluid_particle_radius_2d=4.0
