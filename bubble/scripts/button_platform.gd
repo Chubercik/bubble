@@ -24,7 +24,7 @@ var bot_pos: Vector2
 
 func is_active() -> bool:
 	if ButtonVariant == Variants.HEAVY:
-		return bubbles.has("Bubble_3")
+		return bubbles.has("Bubble_3") or len(blocks) > 0
 	else:
 		return len(bubbles) > 0 or len(blocks) > 0
 

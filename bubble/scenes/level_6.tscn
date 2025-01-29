@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cog36rp4tev1b"]
+[gd_scene load_steps=21 format=3 uid="uid://cog36rp4tev1b"]
 
 [ext_resource type="PackedScene" uid="uid://bssdcr0yia68j" path="res://scenes/level_6_tiled.tscn" id="1_pvor1"]
 [ext_resource type="Script" path="res://scripts/level_6.gd" id="1_qnshk"]
@@ -12,10 +12,14 @@
 [ext_resource type="PackedScene" uid="uid://csebx7a76n6ep" path="res://scenes/bubble_5.tscn" id="6_sh46d"]
 [ext_resource type="PackedScene" uid="uid://ur7ldbmlie16" path="res://scenes/ice_cube.tscn" id="8_4u8q8"]
 [ext_resource type="PackedScene" uid="uid://hmtj5iftobq3" path="res://scenes/syrup.tscn" id="9_w7hhw"]
+[ext_resource type="PackedScene" uid="uid://c82pnveqk0sas" path="res://scenes/platform.tscn" id="12_4v7s2"]
+[ext_resource type="PackedScene" uid="uid://clegvk8r6ec67" path="res://scenes/spikes.tscn" id="12_ur4jy"]
 [ext_resource type="PackedScene" uid="uid://dcplme3va721a" path="res://scenes/block.tscn" id="12_yhptg"]
 [ext_resource type="PackedScene" uid="uid://cxrhwi8xi0wal" path="res://scenes/level_complete/lvl_complete_screen.tscn" id="13_kl6n1"]
 [ext_resource type="AudioStream" uid="uid://bkukmgmmype0k" path="res://sounds/level_music.wav" id="13_t8up7"]
+[ext_resource type="PackedScene" uid="uid://dhop581n4bjre" path="res://scenes/ghost_wall.tscn" id="14_8d4jp"]
 [ext_resource type="PackedScene" uid="uid://dkhpxltqr6td7" path="res://scenes/button_platform.tscn" id="15_i6mdb"]
+[ext_resource type="PackedScene" uid="uid://bepy3g0kmp00k" path="res://scenes/light_platform.tscn" id="20_bases"]
 
 [node name="Level_6" type="Node2D"]
 script = ExtResource("1_qnshk")
@@ -27,36 +31,124 @@ position = Vector2(256, 384)
 
 [node name="Cup" parent="." instance=ExtResource("2_588l6")]
 position = Vector2(16, 288)
+collision_layer = 3
 
 [node name="Bubble_1" parent="." instance=ExtResource("2_npbq2")]
 position = Vector2(16, -336)
+collision_layer = 3
 
 [node name="Bubble_2" parent="." instance=ExtResource("3_aad4l")]
 position = Vector2(-720, 294)
+collision_layer = 3
 
 [node name="Bubble_3" parent="." instance=ExtResource("4_rtmri")]
 position = Vector2(528, 111)
+collision_layer = 3
 
 [node name="Bubble_4" parent="." instance=ExtResource("5_si2le")]
 position = Vector2(-656, -16)
+collision_layer = 3
 
 [node name="Bubble_5" parent="." instance=ExtResource("6_sh46d")]
 position = Vector2(720, -304)
 
 [node name="IceCube" parent="." instance=ExtResource("8_4u8q8")]
 position = Vector2(-488, -328)
+collision_layer = 3
 
 [node name="Syrup" parent="." instance=ExtResource("9_w7hhw")]
 position = Vector2(-751, 43)
+collision_layer = 3
 
 [node name="Buttons" type="Node2D" parent="."]
 
 [node name="Button_1" parent="Buttons" instance=ExtResource("15_i6mdb")]
-position = Vector2(400, -48)
+position = Vector2(-80, -336)
+ButtonVariant = 1
 
 [node name="Button_2" parent="Buttons" instance=ExtResource("15_i6mdb")]
+position = Vector2(-80, -80)
+
+[node name="Button_3" parent="Buttons" instance=ExtResource("15_i6mdb")]
+position = Vector2(400, -48)
+
+[node name="Button_4" parent="Buttons" instance=ExtResource("15_i6mdb")]
 position = Vector2(752, 112)
 ButtonVariant = 2
+
+[node name="Platforms" type="Node2D" parent="."]
+
+[node name="Platform_1" parent="Platforms" instance=ExtResource("12_4v7s2")]
+position = Vector2(-736, 304)
+
+[node name="Platform_2" parent="Platforms" instance=ExtResource("12_4v7s2")]
+position = Vector2(-704, -16)
+
+[node name="Platform_3" parent="Platforms" instance=ExtResource("12_4v7s2")]
+position = Vector2(-576, -176)
+
+[node name="Platform_4" parent="Platforms" instance=ExtResource("12_4v7s2")]
+position = Vector2(608, 112)
+PlatformVariant = 1
+
+[node name="ActiveSpikes_1" type="Node2D" parent="."]
+position = Vector2(208, -208)
+
+[node name="Spikes_1" parent="ActiveSpikes_1" instance=ExtResource("12_ur4jy")]
+position = Vector2(-64, 0)
+
+[node name="Spikes_2" parent="ActiveSpikes_1" instance=ExtResource("12_ur4jy")]
+
+[node name="Spikes_3" parent="ActiveSpikes_1" instance=ExtResource("12_ur4jy")]
+position = Vector2(64, 0)
+
+[node name="ActiveSpikes_2" type="Node2D" parent="."]
+position = Vector2(112, -80)
+
+[node name="Spikes_1" parent="ActiveSpikes_2" instance=ExtResource("12_ur4jy")]
+position = Vector2(-32, 0)
+
+[node name="Spikes_2" parent="ActiveSpikes_2" instance=ExtResource("12_ur4jy")]
+
+[node name="Spikes_3" parent="ActiveSpikes_2" instance=ExtResource("12_ur4jy")]
+position = Vector2(32, 0)
+
+[node name="GhostWalls" type="Node2D" parent="."]
+position = Vector2(320, -144)
+
+[node name="GhostWall_1" parent="GhostWalls" instance=ExtResource("14_8d4jp")]
+position = Vector2(-16, 0)
+rotation = -1.5708
+
+[node name="GhostWall_2" parent="GhostWalls" instance=ExtResource("14_8d4jp")]
+position = Vector2(16, 0)
+rotation = -1.5708
+
+[node name="LightPlatforms" type="Node2D" parent="."]
+
+[node name="LightPlatform_7" parent="LightPlatforms" instance=ExtResource("20_bases")]
+position = Vector2(-624, -160)
+
+[node name="LightPlatform_8" parent="LightPlatforms" instance=ExtResource("20_bases")]
+position = Vector2(-496, -288)
+
+[node name="LightPlatform_5" parent="LightPlatforms" instance=ExtResource("20_bases")]
+position = Vector2(-528, -48)
+
+[node name="LightPlatform_4" parent="LightPlatforms" instance=ExtResource("20_bases")]
+position = Vector2(-432, -48)
+
+[node name="LightPlatform_6" parent="LightPlatforms" instance=ExtResource("20_bases")]
+position = Vector2(-592, -16)
+
+[node name="LightPlatform_3" parent="LightPlatforms" instance=ExtResource("20_bases")]
+position = Vector2(-336, -48)
+
+[node name="LightPlatform_2" parent="LightPlatforms" instance=ExtResource("20_bases")]
+position = Vector2(-240, -48)
+
+[node name="LightPlatform_1" parent="LightPlatforms" instance=ExtResource("20_bases")]
+position = Vector2(-176, -16)
 
 [node name="Block" parent="." instance=ExtResource("12_yhptg")]
 position = Vector2(688, 80)
@@ -67,7 +159,7 @@ position = Vector2(16, 288)
 [node name="CursorHandler" parent="." instance=ExtResource("4_756xp")]
 
 [node name="LvlCompleteScreen" parent="." instance=ExtResource("13_kl6n1")]
-visible = false
+z_index = 2
 offset_left = -576.0
 offset_top = -324.0
 offset_right = -576.0

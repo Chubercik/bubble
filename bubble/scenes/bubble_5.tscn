@@ -153,12 +153,14 @@ animations = [{
 }]
 
 [node name="Bubble_5" type="CharacterBody2D"]
+collision_mask = 2
 script = ExtResource("1_7yvym")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_jscmc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_w6e80")
 
