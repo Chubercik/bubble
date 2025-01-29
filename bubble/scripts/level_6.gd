@@ -135,9 +135,6 @@ func _process(delta: float) -> void:
 	# Move camera to current bubble
 	camera.position = Vector2(min(232, max(-200, active_pos.x)), min(68, max(-68, active_pos.y)))
 
-	if cup.level_finished:
-		pass
-
 	var all_spikes = spikes_1.get_children() + spikes_2.get_children() + active_spikes_1.get_children() + active_spikes_2.get_children()
 	for spike in all_spikes:
 		if spike.dead:
