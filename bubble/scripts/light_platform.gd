@@ -24,5 +24,5 @@ func _process(delta: float) -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.name != "Bubble_4":
+	if body.name != "Bubble_4" and body is not StaticBody2D:
 		broken = true

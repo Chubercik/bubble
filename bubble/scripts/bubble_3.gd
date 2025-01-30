@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 100.0
+const SPEED = 150.0
 const JUMP_VELOCITY = -250.0
 const IDLE_TIMER = 2.0
 const SCALE = Vector2(0.9375, 0.9375)
@@ -13,10 +13,14 @@ var active = false
 var inactive_for = 0.0
 var just_landed = 0.0
 
+var last_pos: Vector2
+
 
 func _ready() -> void:
 	scale = SCALE
 	audio = $AudioStreamPlayer2D
+
+	last_pos = Vector2(0.0, 0.0)
 
 
 func _physics_process(delta: float) -> void:
@@ -64,6 +68,11 @@ func _physics_process(delta: float) -> void:
 	for i in get_slide_collision_count():
 		var c = get_slide_collision(i)
 		if c.get_collider() is RigidBody2D:
-			c.get_collider().apply_central_impulse(-c.get_normal() * PUSH_FORCE)
+			# Push the block up if it doesn't move
+			if c.get_position() == last_pos:
+				c.get_collider().apply_central_impulse(Vector2(0, -1) * PUSH_FORCE)
+			else:
+				c.get_collider().apply_central_impulse(-c.get_normal() * PUSH_FORCE)
+			last_pos = c.get_position()
 
 	inactive_for += delta

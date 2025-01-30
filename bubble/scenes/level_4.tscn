@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bnshp81yo1p37"]
+[gd_scene load_steps=19 format=3 uid="uid://bnshp81yo1p37"]
 
 [ext_resource type="Script" path="res://scripts/level_4.gd" id="1_no5dq"]
 [ext_resource type="PackedScene" uid="uid://cve2ukqd1w0fb" path="res://scenes/level_4_tiled.tscn" id="1_rrfkj"]
@@ -13,6 +13,11 @@
 [ext_resource type="PackedScene" uid="uid://vgtqw1p52p7w" path="res://scenes/bubble_4.tscn" id="7_d5bwt"]
 [ext_resource type="PackedScene" uid="uid://ur7ldbmlie16" path="res://scenes/ice_cube.tscn" id="8_lcwu4"]
 [ext_resource type="PackedScene" uid="uid://hmtj5iftobq3" path="res://scenes/syrup.tscn" id="9_mvto8"]
+[ext_resource type="PackedScene" uid="uid://dkhpxltqr6td7" path="res://scenes/button_platform.tscn" id="10_4bdak"]
+[ext_resource type="PackedScene" uid="uid://bepy3g0kmp00k" path="res://scenes/light_platform.tscn" id="10_nfgxu"]
+[ext_resource type="PackedScene" uid="uid://dcplme3va721a" path="res://scenes/block.tscn" id="11_3syug"]
+[ext_resource type="PackedScene" uid="uid://c82pnveqk0sas" path="res://scenes/platform.tscn" id="11_fe6wk"]
+[ext_resource type="PackedScene" uid="uid://clegvk8r6ec67" path="res://scenes/spikes.tscn" id="13_m2k6b"]
 
 [node name="Level_4" type="Node2D"]
 script = ExtResource("1_no5dq")
@@ -24,6 +29,7 @@ position = Vector2(-208, -176)
 
 [node name="Cup" parent="." instance=ExtResource("3_m0oa1")]
 position = Vector2(-160, 240)
+needs = [true, true, true, true, false]
 
 [node name="Bubble_1" parent="." instance=ExtResource("4_p48as")]
 position = Vector2(-160, -64)
@@ -43,12 +49,139 @@ position = Vector2(-504, -232)
 [node name="Syrup" parent="." instance=ExtResource("9_mvto8")]
 position = Vector2(128, -293)
 
+[node name="Buttons" type="Node2D" parent="."]
+
+[node name="ButtonPlatform_1" parent="Buttons" instance=ExtResource("10_4bdak")]
+position = Vector2(-352, 32)
+
+[node name="ButtonPlatform_2" parent="Buttons" instance=ExtResource("10_4bdak")]
+position = Vector2(-288, 0)
+ButtonVariant = 1
+
+[node name="ButtonPlatform_3" parent="Buttons" instance=ExtResource("10_4bdak")]
+position = Vector2(-160, -256)
+
+[node name="ButtonPlatform_4" parent="Buttons" instance=ExtResource("10_4bdak")]
+position = Vector2(416, 288)
+
+[node name="Platforms" type="Node2D" parent="."]
+
+[node name="Platform_1" parent="Platforms" instance=ExtResource("11_fe6wk")]
+position = Vector2(-48, 288)
+
+[node name="Platform_2" parent="Platforms" instance=ExtResource("11_fe6wk")]
+position = Vector2(-240, -96)
+
+[node name="Platform_3" parent="Platforms" instance=ExtResource("11_fe6wk")]
+position = Vector2(-368, -224)
+
+[node name="Block" parent="." instance=ExtResource("11_3syug")]
+position = Vector2(224, 288)
+
+[node name="LightPlatforms" type="Node2D" parent="."]
+
+[node name="LightPlatform_1" parent="LightPlatforms" instance=ExtResource("10_nfgxu")]
+position = Vector2(-544, -64)
+
+[node name="LightPlatform_2" parent="LightPlatforms" instance=ExtResource("10_nfgxu")]
+position = Vector2(-512, -64)
+
+[node name="LightPlatform_3" parent="LightPlatforms" instance=ExtResource("10_nfgxu")]
+position = Vector2(-480, -64)
+
+[node name="LightPlatform_4" parent="LightPlatforms" instance=ExtResource("10_nfgxu")]
+position = Vector2(-448, -64)
+
+[node name="LightPlatform_5" parent="LightPlatforms" instance=ExtResource("10_nfgxu")]
+position = Vector2(-352, -64)
+
+[node name="LightPlatform_6" parent="LightPlatforms" instance=ExtResource("10_nfgxu")]
+position = Vector2(-320, -64)
+
+[node name="LightPlatform_7" parent="LightPlatforms" instance=ExtResource("10_nfgxu")]
+position = Vector2(-192, -224)
+
+[node name="LightPlatform_8" parent="LightPlatforms" instance=ExtResource("10_nfgxu")]
+position = Vector2(-160, -224)
+
+[node name="LightPlatform_9" parent="LightPlatforms" instance=ExtResource("10_nfgxu")]
+position = Vector2(-128, -224)
+
+[node name="LightPlatform_10" parent="LightPlatforms" instance=ExtResource("10_nfgxu")]
+position = Vector2(256, -256)
+
+[node name="LightPlatform_11" parent="LightPlatforms" instance=ExtResource("10_nfgxu")]
+position = Vector2(288, -192)
+
+[node name="LightPlatform_12" parent="LightPlatforms" instance=ExtResource("10_nfgxu")]
+position = Vector2(480, 64)
+
+[node name="LightPlatform_13" parent="LightPlatforms" instance=ExtResource("10_nfgxu")]
+position = Vector2(512, 64)
+
+[node name="LightPlatform_14" parent="LightPlatforms" instance=ExtResource("10_nfgxu")]
+position = Vector2(544, 64)
+
+[node name="ActiveSpikes_1" type="Node2D" parent="."]
+position = Vector2(304, 288)
+
+[node name="Spikes_1" parent="ActiveSpikes_1" instance=ExtResource("13_m2k6b")]
+position = Vector2(-16, 0)
+
+[node name="Spikes_2" parent="ActiveSpikes_1" instance=ExtResource("13_m2k6b")]
+position = Vector2(16, 0)
+
+[node name="ActiveSpikes_2" type="Node2D" parent="."]
+position = Vector2(96, -64)
+
+[node name="Spikes_1" parent="ActiveSpikes_2" instance=ExtResource("13_m2k6b")]
+position = Vector2(-64, 0)
+
+[node name="Spikes_2" parent="ActiveSpikes_2" instance=ExtResource("13_m2k6b")]
+position = Vector2(-32, 0)
+
+[node name="Spikes_3" parent="ActiveSpikes_2" instance=ExtResource("13_m2k6b")]
+
+[node name="Spikes_4" parent="ActiveSpikes_2" instance=ExtResource("13_m2k6b")]
+position = Vector2(32, 0)
+
+[node name="Spikes_5" parent="ActiveSpikes_2" instance=ExtResource("13_m2k6b")]
+position = Vector2(64, 0)
+
+[node name="ActiveSpikes_3" type="Node2D" parent="."]
+position = Vector2(-160, 96)
+
+[node name="Up" type="Node2D" parent="ActiveSpikes_3"]
+
+[node name="Spikes_1" parent="ActiveSpikes_3/Up" instance=ExtResource("13_m2k6b")]
+position = Vector2(-32, -32)
+
+[node name="Spikes_2" parent="ActiveSpikes_3/Up" instance=ExtResource("13_m2k6b")]
+position = Vector2(0, -32)
+
+[node name="Spikes_3" parent="ActiveSpikes_3/Up" instance=ExtResource("13_m2k6b")]
+position = Vector2(32, -32)
+
+[node name="Left" type="Node2D" parent="ActiveSpikes_3"]
+
+[node name="Spikes" parent="ActiveSpikes_3/Left" instance=ExtResource("13_m2k6b")]
+position = Vector2(-64, 0)
+rotation = -1.5708
+
+[node name="Right" type="Node2D" parent="ActiveSpikes_3"]
+
+[node name="Spikes" parent="ActiveSpikes_3/Right" instance=ExtResource("13_m2k6b")]
+position = Vector2(64, 0)
+rotation = 1.5708
+
 [node name="CupFront" parent="." instance=ExtResource("4_pnnhr")]
 position = Vector2(-160, 240)
 
 [node name="CursorHandler" parent="." instance=ExtResource("2_nepic")]
 
 [node name="LvlCompleteScreen" parent="." instance=ExtResource("4_bprso")]
+visible = false
+z_index = 2
 offset_left = -576.0
 offset_top = -324.0
 offset_right = -576.0
