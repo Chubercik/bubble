@@ -22,17 +22,18 @@ tile_set = ExtResource("1_ypkxk")
 
 [node name="Spikes_1" type="TileMapLayer" parent="."]
 use_parent_material = true
-tile_map_data = PackedByteArray("AAD1/w0AAAAAAAMAAAD2/w0AAAAAAAMAAAD3/w0AAAAAAAMAAAA=")
+tile_map_data = PackedByteArray("AAD1/w0AAQAAAAAAAQD2/w0AAQAAAAAAAQD3/w0AAQAAAAAAAQA=")
 tile_set = ExtResource("1_ypkxk")
 
 [node name="Spikes_2" type="TileMapLayer" parent="."]
 use_parent_material = true
-tile_map_data = PackedByteArray("AAD+/w0AAAAAAAMAAAD//w0AAAAAAAMAAAAAAA0AAAAAAAMAAAA=")
+tile_map_data = PackedByteArray("AAD+/w4AAQAAAAAAAQD//w4AAQAAAAAAAQAAAA4AAQAAAAAAAQA=")
 tile_set = ExtResource("1_ypkxk")
 
-[node name="Elevator" type="TileMapLayer" parent="."]
+[node name="SpikeOccluders" type="TileMapLayer" parent="."]
+z_index = 1
 use_parent_material = true
-tile_map_data = PackedByteArray("AAAKAA0AAAAIAAkAAAALAA0AAAAJAAkAAAA=")
+tile_map_data = PackedByteArray("AAAAAA4AAAABAAAAAAD//w4AAAABAAAAAAD+/w4AAAABAAAAAAD3/w4AAAABAAAAAAD2/w4AAAABAAAAAAD1/w4AAAABAAAAAAA=")
 tile_set = ExtResource("1_ypkxk")
 
 [node name="ExtraThicc" type="TileMapLayer" parent="."]

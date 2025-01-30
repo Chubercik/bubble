@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://d6jh8846y53y"]
+[gd_scene load_steps=14 format=3 uid="uid://d6jh8846y53y"]
 
 [ext_resource type="Script" path="res://scripts/level_2.gd" id="1_4100r"]
 [ext_resource type="PackedScene" uid="uid://byrujcpqlv2wm" path="res://scenes/level_2_tiled.tscn" id="1_ekffh"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://cxrhwi8xi0wal" path="res://scenes/level_complete/lvl_complete_screen.tscn" id="6_sfmnp"]
 [ext_resource type="AudioStream" uid="uid://bkukmgmmype0k" path="res://sounds/level_music.wav" id="7_kg458"]
 [ext_resource type="PackedScene" uid="uid://hmtj5iftobq3" path="res://scenes/syrup.tscn" id="7_u3tfn"]
+[ext_resource type="PackedScene" uid="uid://dkhpxltqr6td7" path="res://scenes/button_platform.tscn" id="8_0i5kf"]
+[ext_resource type="PackedScene" uid="uid://c82pnveqk0sas" path="res://scenes/platform.tscn" id="8_tqin0"]
 
 [node name="Level_2" type="Node2D"]
 script = ExtResource("1_4100r")
@@ -22,6 +24,7 @@ position = Vector2(-32, -256)
 
 [node name="Cup" parent="." instance=ExtResource("2_x7am7")]
 position = Vector2(433, 128)
+needs = [true, true, false, false, false]
 
 [node name="Bubble_1" parent="." instance=ExtResource("4_jgrs8")]
 position = Vector2(-464, -176)
@@ -35,12 +38,25 @@ position = Vector2(-328, 104)
 [node name="Syrup" parent="." instance=ExtResource("7_u3tfn")]
 position = Vector2(48, -53)
 
+[node name="Buttons" type="Node2D" parent="."]
+
+[node name="Button_1" parent="Buttons" instance=ExtResource("8_0i5kf")]
+position = Vector2(-400, -16)
+
+[node name="Button_2" parent="Buttons" instance=ExtResource("8_0i5kf")]
+position = Vector2(-16, -176)
+ButtonVariant = 1
+
+[node name="Platform" parent="." instance=ExtResource("8_tqin0")]
+position = Vector2(320, 176)
+
 [node name="CupFront" parent="." instance=ExtResource("3_6vf8b")]
 position = Vector2(433, 128)
 
 [node name="CursorHandler" parent="." instance=ExtResource("4_1mwwd")]
 
 [node name="LvlCompleteScreen" parent="." instance=ExtResource("6_sfmnp")]
+z_index = 2
 offset_left = -576.0
 offset_top = -324.0
 offset_right = -576.0
