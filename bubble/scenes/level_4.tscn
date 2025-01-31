@@ -157,20 +157,23 @@ position = Vector2(-160, 96)
 position = Vector2(-32, -32)
 
 [node name="Spikes_2" parent="ActiveSpikes_3/Up" instance=ExtResource("13_m2k6b")]
-position = Vector2(0, -32)
-
-[node name="Spikes_3" parent="ActiveSpikes_3/Up" instance=ExtResource("13_m2k6b")]
 position = Vector2(32, -32)
 
 [node name="Left" type="Node2D" parent="ActiveSpikes_3"]
 
-[node name="Spikes" parent="ActiveSpikes_3/Left" instance=ExtResource("13_m2k6b")]
+[node name="Spikes_1" parent="ActiveSpikes_3/Left" instance=ExtResource("13_m2k6b")]
 position = Vector2(-64, 0)
+rotation = -1.5708
+
+[node name="Spikes_2" parent="ActiveSpikes_3/Left" instance=ExtResource("13_m2k6b")]
 rotation = -1.5708
 
 [node name="Right" type="Node2D" parent="ActiveSpikes_3"]
 
-[node name="Spikes" parent="ActiveSpikes_3/Right" instance=ExtResource("13_m2k6b")]
+[node name="Spikes_1" parent="ActiveSpikes_3/Right" instance=ExtResource("13_m2k6b")]
+rotation = 1.5708
+
+[node name="Spikes_2" parent="ActiveSpikes_3/Right" instance=ExtResource("13_m2k6b")]
 position = Vector2(64, 0)
 rotation = 1.5708
 
@@ -180,7 +183,6 @@ position = Vector2(-160, 240)
 [node name="CursorHandler" parent="." instance=ExtResource("2_nepic")]
 
 [node name="LvlCompleteScreen" parent="." instance=ExtResource("4_bprso")]
-visible = false
 z_index = 2
 offset_left = -576.0
 offset_top = -324.0
