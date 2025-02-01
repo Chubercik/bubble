@@ -1,26 +1,23 @@
 extends CharacterBody2D
 
 
-const SPEED = 150.0
-const JUMP_VELOCITY = -250.0
-const IDLE_TIMER = 2.0
-const SCALE = Vector2(0.9375, 0.9375)
-const PUSH_FORCE = 34.5
+const SPEED: float = 150.0
+const JUMP_VELOCITY: float = -250.0
+const IDLE_TIMER: float = 2.0
+const SCALE: Vector2 = Vector2(0.9375, 0.9375)
+const PUSH_FORCE: float = 34.5
 
-var audio: AudioStreamPlayer2D
+@onready var audio: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
-var active = false
-var inactive_for = 0.0
-var just_landed = 0.0
+var active: bool = false
+var inactive_for: float = 0.0
+var just_landed: float = 0.0
 
-var last_pos: Vector2
+var last_pos: Vector2 = Vector2(0.0, 0.0)
 
 
 func _ready() -> void:
 	scale = SCALE
-	audio = $AudioStreamPlayer2D
-
-	last_pos = Vector2(0.0, 0.0)
 
 
 func _physics_process(delta: float) -> void:

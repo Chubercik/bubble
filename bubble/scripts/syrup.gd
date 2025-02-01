@@ -1,13 +1,11 @@
 extends Area2D
 
-var animated_sprite: AnimatedSprite2D
-var audio: AudioStreamPlayer2D
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var audio: AudioStreamPlayer2D = $AudioStreamPlayer2D
 var collected = false
 
 
 func _ready() -> void:
-	animated_sprite = $AnimatedSprite2D
-	audio = $AudioStreamPlayer2D
 	animated_sprite.play("default")
 
 

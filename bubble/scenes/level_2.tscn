@@ -25,7 +25,7 @@ position = Vector2(-32, -256)
 
 [node name="Cup" parent="." instance=ExtResource("2_x7am7")]
 position = Vector2(433, 128)
-needs = [true, true, false, false, false]
+needs = Array[bool]([true, true, false, false, false])
 
 [node name="Bubble_1" parent="." instance=ExtResource("4_jgrs8")]
 position = Vector2(-464, -176)

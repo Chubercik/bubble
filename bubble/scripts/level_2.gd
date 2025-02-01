@@ -1,52 +1,36 @@
 extends Node2D
 
-var bubble_1: CharacterBody2D
-var bubble_2: CharacterBody2D
+@onready var bubble_1: CharacterBody2D = $Bubble_1
+@onready var bubble_2: CharacterBody2D = $Bubble_2
 
-var camera: Camera2D
-var cup: StaticBody2D
+@onready var camera: Camera2D = $Camera2D
+@onready var cup: StaticBody2D = $Cup
 
-var ice_cube: Area2D
-var syrup: Area2D
+@onready var ice_cube: Area2D = $IceCube
+@onready var syrup: Area2D = $Syrup
 
-var spikes_1: TileMapLayer
-var spikes_2: TileMapLayer
+@onready var spikes_1: TileMapLayer = $Level_2_tiled/Spikes_1
+@onready var spikes_2: TileMapLayer = $Level_2_tiled/Spikes_2
 var spikes_1_y: float
 var spikes_2_y: float
 
-var button_1: Node2D
-var button_2: Node2D
+@onready var button_1: Node2D = $Buttons/Button_1
+@onready var button_2: Node2D = $Buttons/Button_2
 
-var platform: Node2D
+@onready var platform: Node2D = $Platform
 var platform_y: float
 
 @onready var bubble_indicator: Sprite2D = $Level_2_tiled/BubbleIndicator
 
-var lvl_comp: Control
+@onready var lvl_comp: Control = $LvlCompleteScreen
 
 
 func _ready() -> void:
-	bubble_1 = $Bubble_1
-	bubble_2 = $Bubble_2
-
-	camera = $Camera2D
-	cup = $Cup
-
-	ice_cube = $IceCube
-	syrup = $Syrup
-
-	spikes_1 = $Level_2_tiled/Spikes_1
-	spikes_2 = $Level_2_tiled/Spikes_2
 	spikes_1_y = spikes_1.position.y
 	spikes_2_y = spikes_2.position.y
 
-	button_1 = $Buttons/Button_1
-	button_2 = $Buttons/Button_2
-
-	platform = $Platform
 	platform_y = platform.position.y
 
-	lvl_comp = $LvlCompleteScreen
 	lvl_comp.curr_scene = 2
 
 	bubble_1.active = true

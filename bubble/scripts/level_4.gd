@@ -43,8 +43,6 @@ var platform_3_y: float
 
 
 func _ready() -> void:
-	active_pos_y = 0.0
-
 	spikes_1_y = active_spikes_1.position.y
 	spikes_2_y = active_spikes_2.position.y
 	spikes_3_y = active_spikes_3_up.position.y

@@ -1,10 +1,6 @@
 extends Node2D
 
-var dead: bool
-
-
-func _ready() -> void:
-	dead = false
+var dead: bool = false
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

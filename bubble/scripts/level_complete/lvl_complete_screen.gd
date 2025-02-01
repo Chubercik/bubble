@@ -1,30 +1,20 @@
 extends Control
 
-var panel: Panel
-var level_complete: AnimatedSprite2D
-var good: AnimatedSprite2D
-var great: AnimatedSprite2D
-var perfect: AnimatedSprite2D
+@onready var panel: Panel = $Panel
+@onready var level_complete: AnimatedSprite2D = $LvlComplete
+@onready var good: AnimatedSprite2D = $LvlCompleteGood
+@onready var great: AnimatedSprite2D = $LvlCompleteGreat
+@onready var perfect: AnimatedSprite2D = $LvlCompletePerfect
 
-var replay_button: Button
-var next_button: Button
-var close_button: Button
+@onready var replay_button: Button = $ReplayButton
+@onready var next_button: Button = $NextButton
+@onready var close_button: Button = $CloseButton
 
-var score = 0
-var curr_scene = 0
+var score: int = 0
+var curr_scene: int = 0
 
 
 func _ready() -> void:
-	panel = $Panel
-	level_complete = $LvlComplete
-	good = $LvlCompleteGood
-	great = $LvlCompleteGreat
-	perfect = $LvlCompletePerfect
-
-	replay_button = $ReplayButton
-	next_button = $NextButton
-	close_button = $CloseButton
-
 	panel.hide()
 	level_complete.hide()
 	good.hide()
@@ -36,12 +26,12 @@ func _ready() -> void:
 	close_button.hide()
 
 
-var timer: float
-var start_1: float
-var start_2: float
+var timer: float = 0.0
+var start_1: float = 0.0
+var start_2: float = 0.0
 
-var lvl_complete_shown = false
-var eval_shown = false
+var lvl_complete_shown: bool = false
+var eval_shown: bool = false
 
 
 func show_level_complete() -> void:
@@ -80,6 +70,7 @@ func _process(delta: float) -> void:
 	if score > 0:
 		panel.show()
 		show_level_complete()
+		close_button.show()
 		if timer - start_1 > 2.0:
 			if score == 1:
 				show_good()
@@ -90,7 +81,6 @@ func _process(delta: float) -> void:
 			if timer - start_2 > 1.0:
 				replay_button.show()
 				next_button.show()
-				close_button.show()
 	timer += delta
 
 
@@ -98,7 +88,10 @@ func _on_replay_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/level_%d.tscn" % curr_scene)
 
 
-# TODO: Last level is an edge case
+# TODO: Last level will attempt
+# switching to a non-existent
+# scene.
+#
 # Too bad!
 func _on_next_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/level_%d.tscn" % (curr_scene + 1))

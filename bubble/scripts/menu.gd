@@ -1,12 +1,10 @@
 extends Control
 
-var levels: Control
-var credits: Control
+@onready var levels: Control = $Levels
+@onready var credits: Control = $Credits
+
 
 func _ready() -> void:
-	levels = $Levels
-	credits = $Credits
-
 	levels.hide()
 	credits.hide()
 

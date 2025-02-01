@@ -1,30 +1,30 @@
 extends Node2D
 
-var bubble_1: CharacterBody2D
-var bubble_2: CharacterBody2D
-var bubble_3: CharacterBody2D
-var active_bubble: CharacterBody2D
+@onready var bubble_1: CharacterBody2D = $Bubble_1
+@onready var bubble_2: CharacterBody2D = $Bubble_2
+@onready var bubble_3: CharacterBody2D = $Bubble_3
+@onready var active_bubble: CharacterBody2D
 
-var camera: Camera2D
-var cup: StaticBody2D
+@onready var camera: Camera2D = $Camera2D
+@onready var cup: StaticBody2D = $Cup
 
-var ice_cube: Area2D
-var syrup: Area2D
+@onready var ice_cube: Area2D = $IceCube
+@onready var syrup: Area2D = $Syrup
 
-var lvl_comp: Control
+@onready var lvl_comp: Control = $LvlCompleteScreen
 
-var spikes_1: TileMapLayer
-var spikes_2: TileMapLayer
+@onready var spikes_1: TileMapLayer = $Level_3_tiled/Tiles_1
+@onready var spikes_2: TileMapLayer = $Level_3_tiled/Tiles_2
 
-var active_spikes: Node2D
+@onready var active_spikes: Node2D = $ActiveSpikes
 var spikes_y: float
 
-var button_1: Node2D
-var button_2: Node2D
-var button_3: Node2D
+@onready var button_1: Node2D = $Buttons/Button_1
+@onready var button_2: Node2D = $Buttons/Button_2
+@onready var button_3: Node2D = $Buttons/Button_3
 
-var platform_1: Node2D
-var platform_2: Node2D
+@onready var platform_1: Node2D = $Platforms/Platform_1
+@onready var platform_2: Node2D = $Platforms/Platform_2
 var platform_1_y: float
 var platform_2_y: float
 
@@ -34,31 +34,10 @@ var active_pos_x: float
 
 
 func _ready() -> void:
-	bubble_1 = $Bubble_1
-	bubble_2 = $Bubble_2
-	bubble_3 = $Bubble_3
-
-	camera = $Camera2D
-	cup = $Cup
-
-	ice_cube = $IceCube
-	syrup = $Syrup
-
-	lvl_comp = $LvlCompleteScreen
 	lvl_comp.curr_scene = 3
 
-	spikes_1 = $Level_3_tiled/Tiles_1
-	spikes_2 = $Level_3_tiled/Tiles_2
-
-	active_spikes = $ActiveSpikes
 	spikes_y = active_spikes.position.y
 
-	button_1 = $Buttons/Button_1
-	button_2 = $Buttons/Button_2
-	button_3 = $Buttons/Button_3
-
-	platform_1 = $Platforms/Platform_1
-	platform_2 = $Platforms/Platform_2
 	platform_1_y = platform_1.position.y
 	platform_2_y = platform_2.position.y
 

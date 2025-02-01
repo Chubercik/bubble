@@ -10,7 +10,7 @@ func _ready():
 	Input.set_custom_mouse_cursor(cursor, Input.CURSOR_ARROW, TIP_LOC)
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		Input.set_custom_mouse_cursor(cursor_click, Input.CURSOR_ARROW, TIP_LOC)
 	else:

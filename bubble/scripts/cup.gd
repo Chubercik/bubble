@@ -1,10 +1,10 @@
 extends StaticBody2D
 
-@export var needs = [true, true, true, true, true]
+@export var needs: Array[bool] = [true, true, true, true, true]
 
-var has = [false, false, false, false, false]
+var has: Array[bool] = [false, false, false, false, false]
 
-var level_finished = false
+var level_finished: bool = false
 
 
 func has_all_needs() -> bool:
@@ -21,26 +21,10 @@ func _process(_delta: float) -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if (body.name == "Bubble_1"):
-		has[0] = true
-	elif (body.name == "Bubble_2"):
-		has[1] = true
-	elif (body.name == "Bubble_3"):
-		has[2] = true
-	elif (body.name == "Bubble_4"):
-		has[3] = true
-	elif (body.name == "Bubble_5"):
-		has[4] = true
+	if (body.name.substr(0, 7) == "Bubble_"):
+		has[int(body.name.substr(7)) - 1] = true
 
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
-	if (body.name == "Bubble_1"):
-		has[0] = false
-	elif (body.name == "Bubble_2"):
-		has[1] = false
-	elif (body.name == "Bubble_3"):
-		has[2] = false
-	elif (body.name == "Bubble_4"):
-		has[3] = false
-	elif (body.name == "Bubble_5"):
-		has[4] = false
+	if (body.name.substr(0, 7) == "Bubble_"):
+		has[int(body.name.substr(7)) - 1] = false

@@ -1,8 +1,8 @@
 extends Fluid2D
 
-const NEW_DROPLET_TIMER = 0.1
+const NEW_DROPLET_TIMER: float = 0.1
 
-var timer = 0.0
+var timer: float = 0.0
 
 
 func _ready() -> void:

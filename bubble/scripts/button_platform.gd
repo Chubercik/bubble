@@ -3,20 +3,20 @@ extends Node2D
 enum Variants {NORMAL, ALT, HEAVY}
 @export var ButtonVariant = Variants.NORMAL
 
-var bubbles: Dictionary
-var blocks: Dictionary
+var bubbles: Dictionary = {}
+var blocks: Dictionary = {}
 
-var top_sprites: Node2D
-var top: Sprite2D
-var top_alt: Sprite2D
-var top_heavy: Sprite2D
+@onready var top_sprites: Node2D = $Area2D/Sprites
+@onready var top: Sprite2D = $Area2D/Sprites/Top
+@onready var top_alt: Sprite2D = $Area2D/Sprites/TopAlt
+@onready var top_heavy: Sprite2D = $Area2D/Sprites/TopHeavy
 
-var bottom_sprites: Node2D
-var bottom: Sprite2D
-var bottom_alt: Sprite2D
-var bottom_heavy: Sprite2D
+@onready var bottom_sprites: Node2D = $StaticBody2D/Sprites
+@onready var bottom: Sprite2D = $StaticBody2D/Sprites/Bottom
+@onready var bottom_alt: Sprite2D = $StaticBody2D/Sprites/BottomAlt
+@onready var bottom_heavy: Sprite2D = $StaticBody2D/Sprites/BottomHeavy
 
-var button_hardener: CollisionPolygon2D
+@onready var button_hardener: CollisionPolygon2D = $ButtonHardener/CollisionPolygon2D
 
 var top_pos: Vector2
 var bot_pos: Vector2
@@ -30,21 +30,6 @@ func is_active() -> bool:
 
 
 func _ready() -> void:
-	bubbles = {}
-	blocks = {}
-
-	top_sprites = $Area2D/Sprites
-	top = $Area2D/Sprites/Top
-	top_alt = $Area2D/Sprites/TopAlt
-	top_heavy = $Area2D/Sprites/TopHeavy
-
-	bottom_sprites = $StaticBody2D/Sprites
-	bottom = $StaticBody2D/Sprites/Bottom
-	bottom_alt = $StaticBody2D/Sprites/BottomAlt
-	bottom_heavy = $StaticBody2D/Sprites/BottomHeavy
-
-	button_hardener = $ButtonHardener/CollisionPolygon2D
-
 	button_hardener.set_deferred("disabled", true)
 
 	top_pos = top_sprites.position

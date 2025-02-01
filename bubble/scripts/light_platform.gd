@@ -1,19 +1,16 @@
 extends Node2D
 
-var anim_sprite: AnimatedSprite2D
+@onready var anim_sprite: AnimatedSprite2D = $StaticBody2D/AnimatedSprite2D
 
-var inside: Dictionary
-var broken: bool
+var inside: Dictionary = {}
+var broken: bool = false
 
-var timer = 0.0
-var break_time = 0.0
+var timer: float = 0.0
+var break_time: float = 0.0
 
 
 func _ready() -> void:
-	anim_sprite = $StaticBody2D/AnimatedSprite2D
 	anim_sprite.play("default")
-	inside = {}
-	broken = false
 
 
 func _process(delta: float) -> void:
