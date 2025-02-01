@@ -17,6 +17,8 @@ var active_pos_y: float
 @onready var platform: Node2D = $Platform
 var platform_y: float
 
+@onready var bubble_indicator: Sprite2D = $Level_5_tiled/BubbleIndicator
+
 @onready var lvl_comp: Control = $LvlCompleteScreen
 
 
@@ -27,6 +29,8 @@ func _ready() -> void:
 
 	bubble_2.active = true
 	active_bubble = bubble_2
+
+	bubble_indicator.modulate = Color.html("#00cdc3")
 
 
 func _process(delta: float) -> void:
@@ -44,16 +48,19 @@ func _process(delta: float) -> void:
 		bubble_4.active = false
 		bubble_5.active = false
 		active_bubble = bubble_2
+		bubble_indicator.modulate = Color.html("#00cdc3")
 	elif Input.is_key_pressed(KEY_4):
 		bubble_2.active = false
 		bubble_4.active = true
 		bubble_5.active = false
 		active_bubble = bubble_4
+		bubble_indicator.modulate = Color.html("#dff242")
 	elif Input.is_key_pressed(KEY_5):
 		bubble_2.active = false
 		bubble_4.active = false
 		bubble_5.active = true
 		active_bubble = bubble_5
+		bubble_indicator.modulate = Color.html("#c83fbe")
 
 	# Update active position
 	if not cup.level_finished:

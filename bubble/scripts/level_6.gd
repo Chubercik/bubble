@@ -39,6 +39,9 @@ var platform_4_y: float
 var active_bubble: CharacterBody2D
 var active_pos = Vector2(0, 0)
 
+@onready var bubble_indicator: Panel = $Camera2D/BubbleIndicator
+var bubble_indicator_style: StyleBox
+
 
 func _ready() -> void:
 	cup = $Cup
@@ -81,6 +84,9 @@ func _ready() -> void:
 	bubble_1.active = true
 	active_bubble = bubble_1
 
+	bubble_indicator_style = bubble_indicator.get_theme_stylebox("panel")
+	bubble_indicator_style.border_color = Color.html("#8350b0")
+
 
 func _process(delta: float) -> void:
 	# Quit level.
@@ -99,6 +105,7 @@ func _process(delta: float) -> void:
 		bubble_4.active = false
 		bubble_5.active = false
 		active_bubble = bubble_1
+		bubble_indicator_style.border_color = Color.html("#8350b0")
 	elif Input.is_key_pressed(KEY_2):
 		bubble_1.active = false
 		bubble_2.active = true
@@ -106,6 +113,7 @@ func _process(delta: float) -> void:
 		bubble_4.active = false
 		bubble_5.active = false
 		active_bubble = bubble_2
+		bubble_indicator_style.border_color = Color.html("#00cdc3")
 	elif Input.is_key_pressed(KEY_3):
 		bubble_1.active = false
 		bubble_2.active = false
@@ -113,6 +121,7 @@ func _process(delta: float) -> void:
 		bubble_4.active = false
 		bubble_5.active = false
 		active_bubble = bubble_3
+		bubble_indicator_style.border_color = Color.html("#3b29cc")
 	elif Input.is_key_pressed(KEY_4):
 		bubble_1.active = false
 		bubble_2.active = false
@@ -120,6 +129,7 @@ func _process(delta: float) -> void:
 		bubble_4.active = true
 		bubble_5.active = false
 		active_bubble = bubble_4
+		bubble_indicator_style.border_color = Color.html("#dff242")
 	elif Input.is_key_pressed(KEY_5):
 		bubble_1.active = false
 		bubble_2.active = false
@@ -127,6 +137,7 @@ func _process(delta: float) -> void:
 		bubble_4.active = false
 		bubble_5.active = true
 		active_bubble = bubble_5
+		bubble_indicator_style.border_color = Color.html("#c83fbe")
 
 	# Update active position
 	if not cup.level_finished:

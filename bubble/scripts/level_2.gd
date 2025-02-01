@@ -20,6 +20,8 @@ var button_2: Node2D
 var platform: Node2D
 var platform_y: float
 
+@onready var bubble_indicator: Sprite2D = $Level_2_tiled/BubbleIndicator
+
 var lvl_comp: Control
 
 
@@ -49,6 +51,8 @@ func _ready() -> void:
 
 	bubble_1.active = true
 
+	bubble_indicator.modulate = Color.html("#8350b0")
+
 
 func _process(delta: float) -> void:
 	# Quit level.
@@ -63,9 +67,11 @@ func _process(delta: float) -> void:
 	if Input.is_key_pressed(KEY_1):
 		bubble_1.active = true
 		bubble_2.active = false
+		bubble_indicator.modulate = Color.html("#8350b0")
 	elif Input.is_key_pressed(KEY_2):
 		bubble_1.active = false
 		bubble_2.active = true
+		bubble_indicator.modulate = Color.html("#00cdc3")
 
 	var all_spikes = spikes_1.get_children() + spikes_2.get_children()
 	for spike in all_spikes:

@@ -2,12 +2,12 @@
 
 [ext_resource type="TileSet" uid="uid://ibvekots121i" path="res://levels/tile_set.tres" id="1_87v4t"]
 
-[sub_resource type="Gradient" id="Gradient_kv4lq"]
+[sub_resource type="Gradient" id="Gradient_2tp0g"]
 offsets = PackedFloat32Array(1)
 colors = PackedColorArray(1, 1, 1, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_uqhwm"]
-gradient = SubResource("Gradient_kv4lq")
+gradient = SubResource("Gradient_2tp0g")
 
 [node name="Level_1_tiled" type="Node2D"]
 texture_filter = 1
