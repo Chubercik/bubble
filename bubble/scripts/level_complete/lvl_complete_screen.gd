@@ -1,5 +1,7 @@
 extends Control
 
+const NUM_OF_LEVELS = 6
+
 @onready var panel: Panel = $Panel
 @onready var level_complete: AnimatedSprite2D = $LvlComplete
 @onready var good: AnimatedSprite2D = $LvlCompleteGood
@@ -88,13 +90,11 @@ func _on_replay_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/level_%d.tscn" % curr_scene)
 
 
-# TODO: Last level will attempt
-# switching to a non-existent
-# scene.
-#
-# Too bad!
 func _on_next_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/level_%d.tscn" % (curr_scene + 1))
+	if curr_scene == NUM_OF_LEVELS:
+		get_tree().change_scene_to_file("res://scenes/level_1.tscn")
+	else:
+		get_tree().change_scene_to_file("res://scenes/level_%d.tscn" % (curr_scene + 1))
 
 
 func _on_close_button_pressed() -> void:
