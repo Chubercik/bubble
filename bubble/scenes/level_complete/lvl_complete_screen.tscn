@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cxrhwi8xi0wal"]
+[gd_scene load_steps=22 format=3 uid="uid://cxrhwi8xi0wal"]
 
 [ext_resource type="Script" path="res://scripts/level_complete/lvl_complete_screen.gd" id="1_bo4pt"]
 [ext_resource type="PackedScene" uid="uid://7ndafx3fiman" path="res://scenes/level_complete/lvl_complete.tscn" id="1_kmcoh"]
@@ -36,6 +36,8 @@ texture = ExtResource("7_d0twh")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e2yww"]
 texture = ExtResource("8_8x4hj")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uwk53"]
 
 [node name="LvlCompleteScreen" type="Control"]
 layout_mode = 3
@@ -94,6 +96,7 @@ offset_left = 772.0
 offset_top = 184.0
 offset_right = 796.0
 offset_bottom = 208.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_uwk53")
 flat = true
 
 [connection signal="pressed" from="ReplayButton" to="." method="_on_replay_button_pressed"]

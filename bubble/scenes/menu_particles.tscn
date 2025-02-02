@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://mdf4q2apgs0j"]
+
+[ext_resource type="Texture2D" uid="uid://35xm47f22ios" path="res://sprites/menu/bubble_tea_cup.png" id="1_e8ioo"]
+[ext_resource type="Script" path="res://scripts/menu_particles.gd" id="1_gjb85"]
+
+[node name="MenuParticles" type="Node2D"]
+script = ExtResource("1_gjb85")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_e8ioo")

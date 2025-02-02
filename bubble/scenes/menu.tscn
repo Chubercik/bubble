@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://kq2273ocin4l"]
+[gd_scene load_steps=29 format=3 uid="uid://kq2273ocin4l"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_nnfcs"]
 [ext_resource type="PackedScene" uid="uid://cwexmvg7gjetr" path="res://scenes/levels.tscn" id="1_rpiko"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cqs0dwut5nfle" path="res://sprites/menu/exit_button_hover.png" id="9_2vodi"]
 [ext_resource type="Texture2D" uid="uid://c16uqgrxrsn2m" path="res://sprites/menu/exit_button_pressed.png" id="10_akpoq"]
 [ext_resource type="Texture2D" uid="uid://fa2csytohv3a" path="res://sprites/menu/exit_button.png" id="11_cd8h3"]
+[ext_resource type="PackedScene" uid="uid://mdf4q2apgs0j" path="res://scenes/menu_particles.tscn" id="12_3bvw5"]
 [ext_resource type="PackedScene" uid="uid://b5al8hg7opse4" path="res://scenes/credits.tscn" id="13_c82yq"]
 [ext_resource type="AudioStream" uid="uid://cpxcgchnnbfrs" path="res://sounds/menu_music.wav" id="15_i7n7h"]
 
@@ -94,6 +95,16 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_wtquy")
 theme_override_styles/hover = SubResource("StyleBoxTexture_gdd03")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_tan73")
 theme_override_styles/normal = SubResource("StyleBoxTexture_ecgr3")
+
+[node name="MenuParticles_1" parent="." instance=ExtResource("12_3bvw5")]
+position = Vector2(175, -64)
+scale = Vector2(2, 2)
+CUTOFF = 1000
+
+[node name="MenuParticles_2" parent="." instance=ExtResource("12_3bvw5")]
+position = Vector2(977, -64)
+scale = Vector2(2, 2)
+CUTOFF = 1000
 
 [node name="Levels" parent="." instance=ExtResource("1_rpiko")]
 visible = false
