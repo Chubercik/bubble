@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://cvj3sybijxigq"]
 
 [ext_resource type="PackedScene" uid="uid://d0hr366258s1u" path="res://scenes/level_5_tiled.tscn" id="1_6j2xb"]
-[ext_resource type="Script" path="res://scripts/level_5.gd" id="1_li43j"]
+[ext_resource type="Script" uid="uid://ddb4o8511726s" path="res://scripts/level_5.gd" id="1_li43j"]
 [ext_resource type="PackedScene" uid="uid://bi4vcqirg0jlu" path="res://scenes/cursor_handler.tscn" id="2_4hwds"]
 [ext_resource type="PackedScene" uid="uid://cxrhwi8xi0wal" path="res://scenes/level_complete/lvl_complete_screen.tscn" id="3_1avha"]
 [ext_resource type="PackedScene" uid="uid://dsep0sua6qxwv" path="res://scenes/cup.tscn" id="3_mni20"]
@@ -28,7 +28,7 @@ position = Vector2(320, -96)
 [node name="Cup" parent="." instance=ExtResource("3_mni20")]
 position = Vector2(44, 128)
 collision_layer = 3
-needs = [false, true, false, true, true]
+needs = Array[bool]([false, true, false, true, true])
 
 [node name="Bubble_2" parent="." instance=ExtResource("4_re8cb")]
 position = Vector2(272, 368)

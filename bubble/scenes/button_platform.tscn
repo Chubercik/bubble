@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dkhpxltqr6td7"]
 
 [ext_resource type="Texture2D" uid="uid://ctp3sefiagpa0" path="res://levels/tileset.png" id="1_0i60l"]
-[ext_resource type="Script" path="res://scripts/button_platform.gd" id="1_ua1a5"]
+[ext_resource type="Script" uid="uid://163jm7q6nq6h" path="res://scripts/button_platform.gd" id="1_ua1a5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ir5jy"]
 size = Vector2(22, 4)

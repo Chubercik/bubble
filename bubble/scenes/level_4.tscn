@@ -1,6 +1,6 @@
 [gd_scene load_steps=19 format=3 uid="uid://bnshp81yo1p37"]
 
-[ext_resource type="Script" path="res://scripts/level_4.gd" id="1_no5dq"]
+[ext_resource type="Script" uid="uid://d1dpuwr0l64js" path="res://scripts/level_4.gd" id="1_no5dq"]
 [ext_resource type="PackedScene" uid="uid://cve2ukqd1w0fb" path="res://scenes/level_4_tiled.tscn" id="1_rrfkj"]
 [ext_resource type="PackedScene" uid="uid://bi4vcqirg0jlu" path="res://scenes/cursor_handler.tscn" id="2_nepic"]
 [ext_resource type="PackedScene" uid="uid://dsep0sua6qxwv" path="res://scenes/cup.tscn" id="3_m0oa1"]
@@ -29,7 +29,7 @@ position = Vector2(-208, -176)
 
 [node name="Cup" parent="." instance=ExtResource("3_m0oa1")]
 position = Vector2(-160, 240)
-needs = [true, true, true, true, false]
+needs = Array[bool]([true, true, true, true, false])
 
 [node name="Bubble_1" parent="." instance=ExtResource("4_p48as")]
 position = Vector2(-160, -64)

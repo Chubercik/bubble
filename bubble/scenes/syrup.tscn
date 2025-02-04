@@ -1,6 +1,6 @@
 [gd_scene load_steps=19 format=3 uid="uid://hmtj5iftobq3"]
 
-[ext_resource type="Script" path="res://scripts/syrup.gd" id="1_qwjta"]
+[ext_resource type="Script" uid="uid://bfs04t0627oon" path="res://scripts/syrup.gd" id="1_qwjta"]
 [ext_resource type="Texture2D" uid="uid://jkoqybcln3lh" path="res://sprites/syrup.png" id="1_th5qm"]
 [ext_resource type="AudioStream" uid="uid://daq3tdos4fabv" path="res://sounds/collect_sound.wav" id="3_03g6m"]
 
