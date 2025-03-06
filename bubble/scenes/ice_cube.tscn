@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://ur7ldbmlie16"]
 
-[ext_resource type="Script" uid="uid://c5l2opmvtfwrc" path="res://scripts/ice_cube.gd" id="1_1vohj"]
+[ext_resource type="Script" uid="uid://b5qoo4swr6fym" path="res://scripts/ice_cube.gd" id="1_1vohj"]
 [ext_resource type="Texture2D" uid="uid://df0ppw746mjrx" path="res://sprites/ice_cube.png" id="1_g85ga"]
 [ext_resource type="AudioStream" uid="uid://daq3tdos4fabv" path="res://sounds/collect_sound.wav" id="3_3aohq"]
 
