@@ -11,6 +11,7 @@ func _ready() -> void:
 
 
 func _on_play_button_pressed() -> void:
+	volume_bar.hide()
 	levels.show()
 
 
