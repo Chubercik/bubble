@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://kq2273ocin4l"]
+[gd_scene load_steps=44 format=3 uid="uid://kq2273ocin4l"]
 
 [ext_resource type="Script" uid="uid://cdhuxafav5yui" path="res://scripts/menu.gd" id="1_nnfcs"]
 [ext_resource type="PackedScene" uid="uid://cwexmvg7gjetr" path="res://scenes/levels.tscn" id="1_rpiko"]
@@ -15,7 +15,12 @@
 [ext_resource type="Texture2D" uid="uid://fa2csytohv3a" path="res://sprites/menu/exit_button.png" id="11_cd8h3"]
 [ext_resource type="PackedScene" uid="uid://mdf4q2apgs0j" path="res://scenes/menu_particles.tscn" id="12_3bvw5"]
 [ext_resource type="PackedScene" uid="uid://b5al8hg7opse4" path="res://scenes/credits.tscn" id="13_c82yq"]
+[ext_resource type="Texture2D" uid="uid://cu8qwf3y28xte" path="res://sprites/volume_bar/icon_max.png" id="15_81l6r"]
 [ext_resource type="AudioStream" uid="uid://cpxcgchnnbfrs" path="res://sounds/menu_music.wav" id="15_i7n7h"]
+[ext_resource type="Script" uid="uid://b0qnvs8lp2dr0" path="res://scripts/volume_bar.gd" id="15_rsfmq"]
+[ext_resource type="Texture2D" uid="uid://dgx3e2n0v1kul" path="res://sprites/volume_bar/bar_off.png" id="16_rsfmq"]
+[ext_resource type="Texture2D" uid="uid://c58tbvap4b26n" path="res://sprites/volume_bar/bar_max.png" id="17_oi1it"]
+[ext_resource type="Script" uid="uid://ibua884fk3no" path="res://scripts/audio_stream_player.gd" id="21_oi1it"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7dvdp"]
 
@@ -49,6 +54,26 @@ texture = ExtResource("10_akpoq")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ecgr3"]
 texture = ExtResource("11_cd8h3")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rsfmq"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_lnf0i"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_ffqrc"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_rsfmq"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_oi1it"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_fy8yy"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_6wigr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lnf0i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ffqrc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x16fv"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -114,12 +139,56 @@ layout_mode = 1
 visible = false
 layout_mode = 1
 
+[node name="VolumeBar" type="Control" parent="."]
+texture_filter = 1
+anchors_preset = 0
+offset_left = 858.0
+offset_top = 552.0
+offset_right = 1114.0
+offset_bottom = 616.0
+script = ExtResource("15_rsfmq")
+
+[node name="VolumeIcon" type="CheckButton" parent="VolumeBar"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 11.0
+offset_right = 78.0
+offset_bottom = 46.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rsfmq")
+theme_override_icons/checked = SubResource("ImageTexture_lnf0i")
+theme_override_icons/unchecked = SubResource("ImageTexture_ffqrc")
+icon = ExtResource("15_81l6r")
+
+[node name="VolumeProgressBar" type="TextureProgressBar" parent="VolumeBar"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 16.0
+offset_right = 238.0
+offset_bottom = 41.0
+texture_under = ExtResource("16_rsfmq")
+texture_progress = ExtResource("17_oi1it")
+
+[node name="HSlider" type="HSlider" parent="VolumeBar/VolumeProgressBar"]
+layout_mode = 0
+offset_left = -7.0
+offset_right = 197.0
+offset_bottom = 25.0
+theme_override_icons/grabber = SubResource("ImageTexture_rsfmq")
+theme_override_icons/grabber_highlight = SubResource("ImageTexture_oi1it")
+theme_override_icons/grabber_disabled = SubResource("ImageTexture_fy8yy")
+theme_override_icons/tick = SubResource("ImageTexture_6wigr")
+theme_override_styles/slider = SubResource("StyleBoxEmpty_lnf0i")
+theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_ffqrc")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_x16fv")
+
 [node name="CursorHandler" parent="." instance=ExtResource("3_8s28k")]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_i7n7h")
 autoplay = true
+script = ExtResource("21_oi1it")
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="toggled" from="VolumeBar/VolumeIcon" to="VolumeBar" method="_on_volume_icon_toggled"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://d6jh8846y53y"]
+[gd_scene load_steps=16 format=3 uid="uid://d6jh8846y53y"]
 
 [ext_resource type="Script" uid="uid://bsmo2q8371255" path="res://scripts/level_2.gd" id="1_4100r"]
 [ext_resource type="PackedScene" uid="uid://byrujcpqlv2wm" path="res://scenes/level_2_tiled.tscn" id="1_ekffh"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dkhpxltqr6td7" path="res://scenes/button_platform.tscn" id="8_0i5kf"]
 [ext_resource type="PackedScene" uid="uid://c82pnveqk0sas" path="res://scenes/platform.tscn" id="8_tqin0"]
 [ext_resource type="PackedScene" uid="uid://bepy3g0kmp00k" path="res://scenes/light_platform.tscn" id="10_v4ahu"]
+[ext_resource type="Script" uid="uid://ibua884fk3no" path="res://scripts/audio_stream_player.gd" id="15_guvtl"]
 
 [node name="Level_2" type="Node2D"]
 script = ExtResource("1_4100r")
@@ -86,3 +87,4 @@ offset_bottom = -324.0
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_kg458")
 autoplay = true
+script = ExtResource("15_guvtl")

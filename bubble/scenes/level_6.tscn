@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cog36rp4tev1b"]
+[gd_scene load_steps=23 format=3 uid="uid://cog36rp4tev1b"]
 
 [ext_resource type="PackedScene" uid="uid://bssdcr0yia68j" path="res://scenes/level_6_tiled.tscn" id="1_pvor1"]
 [ext_resource type="Script" uid="uid://j45aoxwyue7k" path="res://scripts/level_6.gd" id="1_qnshk"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://dhop581n4bjre" path="res://scenes/ghost_wall.tscn" id="14_8d4jp"]
 [ext_resource type="PackedScene" uid="uid://dkhpxltqr6td7" path="res://scenes/button_platform.tscn" id="15_i6mdb"]
 [ext_resource type="PackedScene" uid="uid://bepy3g0kmp00k" path="res://scenes/light_platform.tscn" id="20_bases"]
+[ext_resource type="Script" uid="uid://ibua884fk3no" path="res://scripts/audio_stream_player.gd" id="21_epfji"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vyebw"]
 bg_color = Color(1, 1, 1, 0.498039)
@@ -190,3 +191,4 @@ offset_bottom = -324.0
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_t8up7")
 autoplay = true
+script = ExtResource("21_epfji")

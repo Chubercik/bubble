@@ -1,5 +1,6 @@
 extends Control
 
+@onready var volume_bar: Control = $VolumeBar
 @onready var levels: Control = $Levels
 @onready var credits: Control = $Credits
 
@@ -14,6 +15,7 @@ func _on_play_button_pressed() -> void:
 
 
 func _on_credits_button_pressed() -> void:
+	volume_bar.hide()
 	credits.show()
 
 
