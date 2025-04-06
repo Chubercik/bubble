@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://bng33wwnnnhj" path="res://sounds/jump_sound.wav" id="4_mbvhs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_80bc2"]
-radius = 16.0
+radius = 15.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ijs8d"]
 atlas = ExtResource("2_620s4")
@@ -156,6 +156,7 @@ animations = [{
 script = ExtResource("1_7e427")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_80bc2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
