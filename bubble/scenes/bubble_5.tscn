@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://bng33wwnnnhj" path="res://sounds/jump_sound.wav" id="4_alacc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jscmc"]
-radius = 16.0
+radius = 15.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u88rv"]
 atlas = ExtResource("1_chm2p")
@@ -157,6 +157,7 @@ collision_mask = 2
 script = ExtResource("1_7yvym")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_jscmc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
