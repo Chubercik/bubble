@@ -7,6 +7,7 @@ const IDLE_TIMER: float = 2.0
 const SCALE: Vector2 = Vector2(0.9375, 0.9375)
 const PUSH_FORCE: float = 34.5
 
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var audio: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 var active: bool = false
@@ -26,22 +27,22 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 		inactive_for = 0.0
 		if active:
-			rotation_degrees = Input.get_axis("ui_left", "ui_right") * 45
-		scale.y = move_toward(scale.y, 1.2 * SCALE.y, delta)
+			sprite.rotation_degrees = Input.get_axis("ui_left", "ui_right") * 45
+		sprite.scale.y = move_toward(sprite.scale.y, 1.2, delta)
 		$AnimatedSprite2D.play("default")
 		just_landed = 1.0
 	elif inactive_for <= IDLE_TIMER:
 		if just_landed > 0.0:
-			scale.y = move_toward(scale.y, SCALE.y, delta)
+			sprite.scale.y = move_toward(sprite.scale.y, 1, delta)
 			$AnimatedSprite2D.play("jump")
 			just_landed -= delta
-			if rotation != 0:
+			if sprite.rotation != 0:
 				just_landed = 0.0
 		else:
-			scale.y = move_toward(scale.y, SCALE.y, delta)
+			sprite.scale.y = move_toward(sprite.scale.y, 1, delta)
 			$AnimatedSprite2D.play("default")
 	else:
-		scale.y = move_toward(scale.y, SCALE.y, delta)
+		sprite.scale.y = move_toward(sprite.scale.y, 1, delta)
 		$AnimatedSprite2D.play("idle")
 
 	# Handle jump.
@@ -55,7 +56,7 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction and active:
 		velocity.x = direction * SPEED
-		rotation += direction / 5
+		sprite.rotation += direction / 5
 		inactive_for = 0.0
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
